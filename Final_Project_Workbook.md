@@ -741,10 +741,12 @@ This should be the viewed result of the "cat" command:
   The result of the "cat" command was then copied and pasted into  FigTree v1.4.4.
 
 ![Influenza HA phylogenic tree](https://github.com/eeg1025g71120/InfluenzaProjectRepo/blob/master/Screenshot_2020-05-12%20InfluenzaHA_avian_phylo_compares.png)
-	*A nice version is available to view at 
+	*A nicer version is available to view at: 
 		![Influenza phylogenic tree HA](https://github.com/eeg1025g71120/InfluenzaProjectRepo/blob/master/HA%20Protein%20Influenza%20Phylogenomic%20Tree.pdf)
  
   # Phylogenomic analysis of the NA protein in Influenza A subtypes:
+  The phylogenomic analysis of the NA protein, again begins with downloading and formating the imported data from the ENA database. Due to the quantity of data being downloaded it is essential that we clear the directory from the previous tree This can be done using the "ls" command. After the directory is clear, the data can be downloaded and formated properly. 
+  The following downloaded data is broken down by the HA variables:
   	# Download Reference Strains
 		#H1N1 (Duck)
 			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AAF77038.1?download=true
@@ -1254,11 +1256,38 @@ This should be the viewed result of the "cat" command:
 			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AGX84936.1?download=true
 			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGX84936.1?download=true > H18N11_NA.fasta
 			awk '/^>/{print "> H18N11_bat_" ++i; next}{print}' H18N11_NA.fasta > header_H18N11_NA.fa
+Again, the downloaded and formated data is combined into a Fasta files: 
 
 	cat header_H1N1_NA.fa header_H1N2_NA.fa header_H1N3_NA.fa header_H1N4_NA.fa header_H1N5_NA.fa header_H1N6_NA.fa header_H1N7_NA.fa header_H1N8_NA.fa header_H1N9_NA.fa header_H2N1_NA.fa header_H2N2_NA.fa header_H2N3_NA.fa header_H2N4_NA.fa header_H2N5_NA.fa header_H2N6_NA.fa header_H2N7_NA.fa header_H2N8_NA.fa header_H2N9_NA.fa header_H3N1_NA.fa header_H3N2_NA.fa header_H3N3_NA.fa header_H3N4_NA.fa header_H3N5_NA.fa header_H3N6_NA.fa header_H3N7_NA.fa header_H3N8_NA.fa header_H3N9_NA.fa header_H4N1_NA.fa header_H4N2_NA.fa header_H4N3_NA.fa header_H4N4_NA.fa header_H4N5_NA.fa header_H4N6_NA.fa header_H4N7_NA.fa header_H4N8_NA.fa header_H4N9_NA.fa header_H5N1_NA.fa header_H5N2_NA.fa header_H5N3_NA.fa header_H5N4_NA.fa header_H5N5_NA.fa header_H5N6_NA.fa header_H5N7_NA.fa header_H5N8_NA.fa header_H5N9_NA.fa header_H6N1_NA.fa header_H6N2_NA.fa header_H6N3_NA.fa header_H6N4_NA.fa header_H6N5_NA.fa header_H6N6_NA.fa header_H6N7_NA.fa header_H6N8_NA.fa header_H6N9_NA.fa header_H7N1_NA.fa header_H7N2_NA.fa header_H7N3_NA.fa header_H7N4_NA.fa header_H7N5_NA.fa header_H7N6_NA.fa header_H7N7_NA.fa header_H7N8_NA.fa header_H7N9_NA.fa header_H8N1_NA.fa header_H8N2_NA.fa header_H8N3_NA.fa header_H8N4_NA.fa header_H8N5_NA.fa header_H8N6_NA.fa header_H8N7_NA.fa header_H8N8_NA.fa header_H9N1_NA.fa header_H9N2_NA.fa header_H9N3_NA.fa header_H9N4_NA.fa header_H9N5_NA.fa header_H9N6_NA.fa header_H9N7_NA.fa header_H9N8_NA.fa header_H9N9_NA.fa header_H10N1_NA.fa header_H10N2_NA.fa header_H10N3_NA.fa header_H10N4_NA.fa header_H10N5_NA.fa header_H10N6_NA.fa header_H10N7_NA.fa header_H10N8_NA.fa header_H10N9_NA.fa header_H11N1_NA.fa header_H11N2_NA.fa header_H11N3_NA.fa header_H11N4_NA.fa header_H11N5_NA.fa header_H11N6_NA.fa header_H11N7_NA.fa header_H11N8_NA.fa header_H11N9_NA.fa header_H12N1_NA.fa header_H12N2_NA.fa header_H12N3_NA.fa header_H12N4_NA.fa header_H12N5_NA.fa header_H12N6_NA.fa header_H12N7_NA.fa header_H12N8_HA.fa header_H12N9_NA.fa header_H13N2_NA.fa header_H13N3_NA.fa header_H13N6_NA.fa header_H13N8_NA.fa header_H13N9_NA.fa header_H14N2_NA.fa header_H14N3_NA.fa header_H14N4_NA.fa header_H14N5_NA.fa header_H14N6_NA.fa header_H14N7_NA.fa header_H14N8_NA.fa header_H15N4_NA.fa header_H15N7_NA.fa header_H15N8_NA.fa header_H15N9_NA.fa header_H16N3_NA.fa header_H16N9_NA.fa header_H17N10_NA.fa header_H18N11_NA.fa> Influenza_NA_Phylogenetics_Tree.fa
 
+
+After combining the files, another MAFFT analysis is done to align the sequences:
+
 	mafft --auto Influenza_NA_Phylogenetics_Tree.fa > Output_Influenza_NA_Phylogenetics_Tree.fa
-
+ "--auto" precedes the input file, which output file of our previous "cat" command
+ "Output_Influenza_HA_phylogenic.fa" is the name of our output file in our study, but any output file name will work as long as the syntax is correct.
+	
+The ouput from the MAFFT sequence alignment is then used to build a phylogenic tree based on our data:	
+	
 	iqtree -s Output_Influenza_NA_Phylogenetics_Tree.fa -m JC -bb 1000 -pre output
-	 cat output.contree
+"-s" precedes our input file which is the output file of our MAFFT alignment
+"JC" is the model that was used for this study
+"-bb" is the boostraping subset used for this study was 1000
+"-pre" precedes the name of our output file. I used "output" as the file name for simplicity sake, but the output file name could be anything.
 
+The iqtree should then produce a file named: output.contree (same as last time).
+This file was then "cat"ed onto the terminal"
+
+		cat output.contree
+This should be the viewed result of the "cat" command:
+
+
+	(H1N1_Duck1:0.019219,(((((((((((H1N2_Duck1:0.057968,H9N2_duck1:0.078540)90:0.030822,(((H2N2_duck:0.021279,(H4N2_duck:0.023570,H6N2_duck:0.058247)88:0.020280)83:0.007679,H14N2_northern_shoveler:0.036362)78:0.009658,((((H3N2_duck:0.007801,((H8N2_duck:0.002110,H12N2_duck:0.005008)100:0.005728,H13N2_duck1:0.016557)100:0.000720)100:0.015640,H10N2_duck:0.014602)100:0.015887,H7N2_duck:0.026506)100:0.015147,(H5N2_duck:0.017092,H11N2_duck:0.025908)100:0.021769)100:0.020640)95:0.027314)100:0.312195,(((((H1N6_Mallard1:0.015236,H12N6_duck:0.020447)100:0.018054,(H2N6_mallard:0.025784,H10N6_duck:0.008862)100:0.021312)100:0.094131,(((((((H3N6_duck:0.002127,H4N6_duck:0.004264)100:0.003462,H14N6_duck:0.007934)95:0.000771,(H7N6_duck:0.003481,H11N6_duck:0.019469)99:0.002949)100:0.036013,H8N6_ruddy_shelduck1:0.034684)93:0.013801,H5N6_duck:0.105655)92:0.016189,H9N6_duck1:0.032256)99:0.043545,H13N6_duck1:0.069666)100:0.071585)100:0.159908,(((((H1N9_mallard:0.036030,(H13N9_gull1:0.001650,H16N9_gull:0.005345)100:0.046378)69:0.004634,(H5N9_duck:0.025348,H12N9_mallard:0.018278)96:0.007605)100:0.022493,(H6N9_duck:0.011805,H9N9_ruddy_turnstone1:0.028542)75:0.008088)100:0.027368,(H2N9_duck:0.011599,(H4N9_mallard:0.008760,(H7N9_duck:0.022528,(H11N9_duck:0.038676,H15N9_duck:0.022681)100:0.004869)100:0.007940)100:0.003404)100:0.034195)100:0.071257,H10N9_duck:0.093902)100:0.166420)100:0.094297,((((H1N7_ruddy_turnstone:0.008671,H14N7_teal:0.018609)100:0.009063,(((H6N7_mallard:0.002843,H9N7_ruddy_turnstone1:0.015756)54:0.000712,H12N7_ruddy_turnstone:0.005675)47:0.000594,H8N7_duck1:0.036419)72:0.020508)71:0.010458,H3N7_mallard1:0.019871)100:0.137163,(H2N7_duck:0.026894,(((H4N7_duck:0.009929,(H7N7_duck:0.015757,H15N7_mallard:0.034749)99:0.002867)98:0.002156,H5N7_mallard:0.017099)99:0.003054,(H10N7_duck:0.014699,H11N7_mallard:0.027837)100:0.010687)100:0.022937)100:0.103085)100:0.191505)100:0.101169)99:0.081854,(((H1N3_Duck1:0.051502,(H3N3_duck:0.048185,((((H4N3_duck:0.023001,H12N3_ruddy_shelduck:0.021977)98:0.003678,H8N3_perdix_perdix:0.015060)92:0.002647,((H5N3_duck:0.011142,H9N3_mallard1:0.008195)100:0.002065,H10N3_duck:0.014759)100:0.012388)88:0.001563,H7N3_duck:0.023733)94:0.009826)100:0.041446)99:0.035398,(((H2N3_duck:0.007353,H6N3_duck:0.012712)78:0.013527,H14N3_teal1:0.035787)75:0.014112,H11N3_duck:0.024529)100:0.036237)100:0.101595,(H13N3_gull1:0.017792,H16N3_duck:0.017168)100:0.169100)100:0.237524)100:0.135411,(H17N10_bat_1:0.486560,H18N11_bat_1:0.428456)100:0.265770)87:0.033546,((((((H1N5_Duck1:0.009400,H3N5_duck:0.016308)100:0.015277,H5N5_duck:0.024859)92:0.014117,(H6N5_duck:0.030470,(H8N5_duck1:0.005646,H10N5_duck:0.000721)100:0.012789)98:0.008420)90:0.023225,H14N5_mallard:0.029820)100:0.104033,(((H2N5_mallard:0.023261,((H7N5_duck:0.020817,H12N5_duck:0.009912)96:0.010150,H9N5_ruddy_turnstone1:0.020889)96:0.020515)89:0.010595,H11N5_teal:0.031420)89:0.011104,H4N5_mallard:0.027769)100:0.085317)100:0.170421,((((((H1N8_mallard:0.035529,(H3N8_mallard:0.010627,H12N8_duck:0.013161)100:0.013535)87:0.004060,(H4N8_duck:0.017589,H9N8_duck1:0.025086)100:0.014865)84:0.007079,H14N8_duck:0.039688)91:0.013620,H2N8_duck:0.043427)91:0.023521,H15N8_duck:0.045200)100:0.083700,(H5N8_duck:0.063881,(((H6N8_duck:0.012706,((H8N8_teal1:0.013386,H11N8_mallard:0.008080)90:0.000734,H10N8_duck:0.027127)90:0.003923)100:0.032906,H7N8_duck:0.050912)98:0.018883,H13N8_gull1:0.080364)53:0.020233)100:0.102109)100:0.130067)100:0.180178)100:0.090388,((((H1N4_Duck1:0.013555,H7N4_duck:0.017614)100:0.013270,(H8N4_duck:0.010402,H9N4_duck1:0.007795)99:0.004210)100:0.018829,((H6N4_duck:0.015715,H15N4_teal:0.002166)99:0.027084,H10N4_mallard:0.014462)82:0.015979)100:0.060701,((H2N4_mallard:0.018108,(H3N4_duck_mallard:0.010426,((H5N4_mallard:0.018618,H14N4_teal1:0.016445)91:0.003852,H12N4_mallard:0.005571)91:0.002842)100:0.031116)100:0.019255,H4N4_duck:0.019014)100:0.070600)100:0.180005)100:0.219678,H3N1_duck:0.037364)86:0.028782,((((H5N1_duck:0.041495,H6N1_duck:0.031157)99:0.010191,(H7N1_duck:0.029772,H12N1_duck:0.019143)100:0.033181)100:0.042167,H10N1_duck:0.021305)87:0.021066,H11N1_duck:0.022421)88:0.023535)100:0.041679,H4N1_duck:0.021062)96:0.007955,((H8N1_northern_shoveler:0.044138,H11N4_ruddy_turnstone:0.021693)100:0.025476,H9N1_duck1:0.010526)99:0.007362)99:0.004719,H2N1_duck:0.017001);
+
+
+ The result of the "cat" command was then copied and pasted into  FigTree v1.4.4.
+
+![Influenza NA phylogenic tree](https://github.com/eeg1025g71120/InfluenzaProjectRepo/blob/master/Screenshot_2020-05-12%20InfluenzaHA_avian_phylo_compares.png)
+	*A nicer, more detailed version is available to view at: 
+		![Influenza phylogenic tree NA](https://github.com/eeg1025g71120/InfluenzaProjectRepo/blob/master/Influenza_NA_phylogenomics)
+			
