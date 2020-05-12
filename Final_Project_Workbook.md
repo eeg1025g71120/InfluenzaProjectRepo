@@ -180,7 +180,7 @@ Once again, the human-infecting influenza strains are then combined into a fasta
 Again, due to Ron's limited space all files should be removed using the rm command.  
 The "ls" command can then be used to ensure our directory is clear.
 
-*Disclaimer If using Jetstream or coding platform with a large storage component then the file from each BLAST analysis do not have to be removed right away. Our study choose to remove the data ater each analysis to avoid any coding complications. If one of these larger storage component platforms are used it is recommended that the cat file for each indvidual BLAST analysis has ts own unique name to avoid complication.*
+*Disclaimer: If using Jetstream or coding platform with a large storage component then the file from each BLAST analysis do not have to be removed right away. Our study choose to remove the data ater each analysis to avoid any coding complications. If one of these larger storage component platforms are used it is recommended that the cat file for each indvidual BLAST analysis has ts own unique name to avoid complication.*
   # Phylogenomic analysis of the HA proteins in Influenza A subtypes:
        # Download Reference Strains
               #H1N1 (Duck)
