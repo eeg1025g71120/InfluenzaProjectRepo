@@ -107,292 +107,285 @@
        # Download Reference Strains
               #H1N1 (Duck)
                   curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/CCH23215.1?download=true
-                  awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' CCH23215.1?download=true > H1N1_HA.fa
+                  awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' CCH23215.1?download=true> H1N1_HA.fa
                   awk '/^>/{print "> H1N1_Duck" ++i; next}{print}' H1N1_HA.fa > header_H1N1_HA.fa
               #H1N2 (Duck)
-                curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/APW83915.1?download=true
-                awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' APW83915.1?download=true > H1N2_HA.fa
-                awk '/^>/{print "> H1N2_Duck" ++i; next}{print}' H1N2_HA.fa > header_H1N2_HA.fa
-	H1N3 (Duck) 
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AGH30612.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGH30612.1?download=true > H1N3_HA.fa
-	awk '/^>/{print "> H1N3_Duck" ++i; next}{print}' H1N3_HA.fa > header_H1N3_HA.fa
-	H1N4 (Duck)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AGR54646.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGR54646.1?download=true > H1N4_HA.fa
-	awk '/^>/{print "> H1N4_Duck" ++i; next}{print}' H1N4_HA.fa > header_H1N4_HA.fa
-H1N5 (Duck)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/BAJ07978.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' BAJ07978.1?download=true > H1N5_HA.fa
-awk '/^>/{print "> H1N5_Duck" ++i; next}{print}' H1N5_HA.fa > header_H1N5_HA.fa
-H1N6 (Mallard)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ADR00746.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ADR00746.1?download=true > H1N6_HA.fa
-		awk '/^>/{print "> H1N6_Mallard" ++i; next}{print}' H1N6_HA.fa > header_H1N6_HA.fa
-H1N7 (ruddy turnstone)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AGL60569.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGL60569.1?download=true > H1N7_HA.fa
-awk '/^>/{print "> H1N7_ruddy_turnstone " ++i; next}{print}' H1N7_HA.fa > header_H1N7_HA.fa
-H1N8 (mallard)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AHL81601.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AHL81601.1?download=true > H1N8_HA.fa
-awk '/^>/{print "> H1N8_mallard " ++i; next}{print}' H1N8_HA.fa > header_H1N8_HA.fa
-H1N9 (mallard)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AGG29035.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGG29035.1?download=true > H1N9_HA.fa
-awk '/^>/{print "> H1N9_mallard " ++i; next}{print}' H1N9_HA.fa > header_H1N9_HA.fa
-H2
-	H2N1 (duck) 
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AHN00441.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AHN00441.1?download=true > H2N1_HA.fa
-awk '/^>/{print "> H2N1_duck " ++i; next}{print}' H2N1_HA.fa > header_H2N1_HA.fa
-	H2N2 (duck)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AIG94040.1?download=true 
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AIG94040.1?download=true > H2N2_HA.fa
-awk '/^>/{print "> H2N2_duck " ++i; next}{print}' H2N2_HA.fa > header_H2N2_HA.fa
-H2N3 (duck)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AHZ39487.1?download=true 
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AHZ39487.1?download=true > H2N3_HA.fa
-awk '/^>/{print "> H2N3_duck " ++i; next}{print}' H2N3_HA.fa > header_H2N3_HA.fa
-	H2N4 (mallard)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ALZ46891.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ALZ46891.1?download=true > H2N4_HA.fa
-awk '/^>/{print "> H2N4_mallard " ++i; next}{print}' H2N4_HA.fa > header_H2N4_HA.fa
-	H2N5 (mallard)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AAT65325.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AAT65325.1?download=true > H2N5_HA.fa
-awk '/^>/{print "> H2N5_mallard " ++i; next}{print}' H2N5_HA.fa > header_H2N5_HA.fa
-	H2N6 (mallard)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ALZ47458.1?download=true 
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ALZ47458.1?download=true > H2N6_HA.fa
-awk '/^>/{print "> H2N6_mallard " ++i; next}{print}' H2N6_HA.fa > header_H2N6_HA.fa
-	H2N7 (duck)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AGR54671.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGR54671.1?download=true > H2N7_HA.fa
-awk '/^>/{print "> H2N7_duck " ++i; next}{print}' H2N7_HA.fa > header_H2N7_HA.fa
-	H2N8 (duck)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AGL07492.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGL07492.1?download=true> H2N8_HA.fa
-awk '/^>/{print "> H2N8_duck " ++i; next}{print}' H2N8_HA.fa > header_H2N8_HA.fa
-	H2N9 (duck)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AQS25206.1?download=true 
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AQS25206.1?download=true > H2N9_HA.fa
-awk '/^>/{print "> H2N9_duck " ++i; next}{print}' H2N9_HA.fa > header_H2N9_HA.fa
-H3
-	H3N1 (duck)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ATI21278.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ATI21278.1?download=true > H3N1_HA.fa
-awk '/^>/{print "> H3N1_duck " ++i; next}{print}' H3N1_HA.fa > header_H3N1_HA.fa
-	H3N2 (duck)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AJS16375.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AJS16375.1?download=true> H3N2_HA.fa
-awk '/^>/{print "> H3N2_duck " ++i; next}{print}' H3N2_HA.fa > header_H3N2_HA.fa
-H3N3 (duck)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/BBC69224.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' BBC69224.1?download=true > H3N3_HA.fa
-awk '/^>/{print "> H3N3_duck " ++i; next}{print}' H3N3_HA.fa > header_H3N3_HA.fa
-	H3N4 (duck/ mallard)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ABB19704.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ABB19704.1?download=true > H3N4_HA.fa
-awk '/^>/{print "> H3N4_duck_mallard " ++i; next}{print}' H3N4_HA.fa > header_H3N4_HA.fa
-	H3N5 (duck)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/BAL70284.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' BAL70284.1?download=true > H3N5_HA.fa
-awk '/^>/{print "> H3N5_duck " ++i; next}{print}' H3N5_HA.fa > header_H3N5_HA.fa
-	H3N6 (duck)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AHI97157.1?download=true 
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AHI97157.1?download=true > H3N6_HA.fa
-awk '/^>/{print "> H3N6_duck " ++i; next}{print}' H3N6_HA.fa > header_H3N6_HA.fa
-	H3N7 (mallard)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AGG83461.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGG83461.1?download=true > H3N7_HA.fa
-awk '/^>/{print "> H3N7_mallard" ++i; next}{print}' H3N7_HA.fa > header_H3N7_HA.fa
-	H3N8 (mallard)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AQS26257.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AQS26257.1?download=true > H3N8_HA.fa
-awk '/^>/{print "> H3N8_mallard " ++i; next}{print}' H3N8_HA.fa > header_H3N8_HA.fa
-	H3N9 (duck)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AFY06239.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AFY06239.1?download=true >H3N9_HA.fa
-awk '/^>/{print "> H3N9_duck " ++i; next}{print}' H3N9_HA.fa > header_H3N9_HA.fa
-H4
-	H4N1 (duck)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/BAF46754.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' BAF46754.1?download=true >H4N1_HA.fa
-awk '/^>/{print "> H4N1_duck " ++i; next}{print}' H4N1_HA.fa > header_H4N1_HA.fa
-	H4N2 (duck)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ACX55897.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ACX55897.1?download=true >H4N2_HA.fa
-awk '/^>/{print "> H4N2_duck " ++i; next}{print}' H4N2_HA.fa > header_H4N2_HA.fa 
-	H4N3 (duck)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ALP45701.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ALP45701.1?download=true >H4N3_HA.fa
-awk '/^>/{print "> H4N3_duck " ++i; next}{print}' H4N3_HA.fa > header_H4N3_HA.fa
-	H4N4 (duck)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ABI84423.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ABI84423.1?download=true >H4N4_HA.fa
-awk '/^>/{print "> H4N4_duck " ++i; next}{print}' H4N4_HA.fa > header_H4N4_HA.fa
-	H4N5 (mallard)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AHM97698.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AHM97698.1?download=true >H4N5_HA.fa
-awk '/^>/{print "> H4N5_mallard " ++i; next}{print}' H4N5_HA.fa > header_H4N5_HA.fa
-	H4N6 (duck)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AHN13689.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AHN13689.1?download=true >H4N6_HA.fa
-awk '/^>/{print "> H4N6_duck " ++i; next}{print}' H4N6_HA.fa > header_H4N6_HA.fa
-	H4N7 (duck)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ACX55888.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ACX55888.1?download=true>H4N7_HA.fa
-awk '/^>/{print "> H4N7_duck " ++i; next}{print}' H4N7_HA.fa > header_H4N7_HA.fa
-	H4N8 (duck)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ACX55885.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ACX55885.1?download=true >H4N8_HA.fa
-awk '/^>/{print "> H4N8_duck " ++i; next}{print}' H4N8_HA.fa > header_H4N8_HA.fa
-	H4N9 (mallard) 
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AHL80167.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AHL80167.1?download=true >H4N9_HA.fa
-awk '/^>/{print "> H4N9_mallard " ++i; next}{print}' H4N9_HA.fa > header_H4N9_HA.fa
-H5
-	H5N1 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/ABO64692.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ABO64692.1?download=true>H5N1_HA.fa 
-awk '/^>/{print "> H5N1_duck " ++i; next}{print}' H5N1_HA.fa > header_H5N1_HA.fa
-	H5N2 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/ACR09566.1?download=true 
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ACR09566.1?download=true >H5N2_HA.fa
-awk '/^>/{print "> H5N2_duck " ++i; next}{print}' H5N2_HA.fa > header_H5N2_HA.fa
-	H5N3 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/ACR66926.1?download=true 
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ACR66926.1?download=true >H5N3_HA.fa
-awk '/^>/{print "> H5N3_duck " ++i; next}{print}' H5N3_HA.fa > header_H5N3_HA.fa
-	H5N4 (mallard)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AMX73132.1?download=true 
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AMX73132.1?download=true  >H5N4_HA.fa
-awk '/^>/{print "> H5N4_mallard " ++i; next}{print}' H5N4_HA.fa > header_H5N4_HA.fa
-	H5N5 (duck) 
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/ADD10580.1?download=true 
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ADD10580.1?download=true  >H5N5_HA.fa
-awk '/^>/{print "> H5N5_duck " ++i; next}{print}' H5N5_HA.fa > header_H5N5_HA.fa
-	H5N6 (duck)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AIR93950.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AIR93950.1?download=true >H5N6_HA.fa
-awk '/^>/{print "> H5N6_duck " ++i; next}{print}' H5N6_HA.fa > header_H5N6_HA.fa
-	H5N7 (mallard) 
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AAT07996.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AAT07996.1?download=true  >H5N7_HA.fa
-awk '/^>/{print "> H5N7_mallard " ++i; next}{print}' H5N7_HA.fa > header_H5N7_HA.fa
-	H5N8 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AHI97159.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AHI97159.1?download=true >H5N8_HA.fa
-awk '/^>/{print "> H5N8_duck " ++i; next}{print}' H5N8_HA.fa > header_H5N8_HA.fa
-	H5N9(duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AGI65009.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGI65009.1?download=true  >H5N9_HA.fa 
-awk '/^>/{print "> H5N9_duck " ++i; next}{print}' H5N9_HA.fa > header_H5N9_HA.fa
-H6
-	H6N1 (duck) 
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/ABD35522.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ABD35522.1?download=true >H6N1_HA.fa
-awk '/^>/{print "> H6N1_duck " ++i; next}{print}' H6N1_HA.fa > header_H6N1_HA.fa
-	H6N2 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AJM71243.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AJM71243.1?download=true >H6N2_HA.fa
-awk '/^>/{print "> H6N2_duck " ++i; next}{print}' H6N2_HA.fa > header_H6N2_HA.fa
-	H6N3 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/ABB19184.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ABB19184.1?download=true > H6N3_HA.fa
-awk '/^>/{print "> H6N3_duck " ++i; next}{print}' H6N3_HA.fa > header_H6N3_HA.fa
-	H6N4 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/APC32831.1?download=true 
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' APC32831.1?download=true >H6N4_HA.fa
-awk '/^>/{print "> H6N4_duck " ++i; next}{print}' H6N4_HA.fa > header_H6N4_HA.fa
-	H6N5 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/APC30385.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' APC30385.1?download=true >H6N5_HA.fa
-awk '/^>/{print "> H6N5_duck " ++i; next}{print}' H6N5_HA.fa > header_H6N5_HA.fa
-	H6N6 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AKZ41797.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AKZ41797.1?download=true >H6N6_HA.fa
-awk '/^>/{print "> H6N6_duck " ++i; next}{print}' H6N6_HA.fa > header_H6N6_HA.fa
-	H6N7 (mallard)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AGK41573.1?download=true 
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGK41573.1?download=true >H6N7_HA.fa
-awk '/^>/{print "> H6N7_mallard " ++i; next}{print}' H6N7_HA.fa > header_H6N7_HA.fa
-	H6N8 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AJM71266.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AJM71266.1?download=true >H6N8_HA.fa
-awk '/^>/{print "> H6N8_duck " ++i; next}{print}' H6N8_HA.fa > header_H6N8_HA.fa
-	H6N9 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/CAC84240.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' CAC84240.1?download=true >H6N9_HA.fa
-awk '/^>/{print "> H6N9_duck " ++i; next}{print}' H6N9_HA.fa > header_H6N9_HA.fa
-H7
-H7N1 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/BAF02932.2?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' BAF02932.2?download=true >H7N1_HA.fa
-awk '/^>/{print "> H7N1_duck " ++i; next}{print}' H7N1_HA.fa > header_H7N1_HA.fa
-	H7N2 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/BAQ21385.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' BAQ21385.1?download=true >H7N2_HA.fa
-awk '/^>/{print "> H7N2_duck " ++i; next}{print}' H7N2_HA.fa > header_H7N2_HA.fa
-	H7N3 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AQS25989.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AQS25989.1?download=true >H7N3_HA.fa
-awk '/^>/{print "> H7N3_duck " ++i; next}{print}' H7N3_HA.fa> header_H7N3_HA.fa
-	H7N4 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AGW25713.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGW25713.1?download=true > H7N4_HA.fa
-awk '/^>/{print "> H7N4_duck " ++i; next}{print}' H7N4_HA.fa > header_H7N4_HA.fa
-	H7N5 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/ABB87751.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ABB87751.1?download=true >H7N5_HA.fa
-awk '/^>/{print "> H7N5_duck " ++i; next}{print}' H7N5_HA.fa > header_H7N5_HA.fa
-	H7N6 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AFO83210.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AFO83210.1?download=true >H7N6_HA.fa
-awk '/^>/{print "> H7N6_duck " ++i; next}{print}' H7N6_HA.fa > header_H7N6_HA.fa
-	H7N7 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/BAQ21375.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' BAQ21375.1?download=true >H7N7_HA.fa
-awk '/^>/{print "> H7N7_duck " ++i; next}{print}' H7N7_HA.fa > header_H7N7_HA.fa
-	H7N8 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AGQ80991.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGQ80991.1?download=true >H7N8_HA.fa
-awk '/^>/{print "> H7N8_duck " ++i; next}{print}' H7N8_HA.fa > header_H7N8_HA.fa
-	H7N9 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AGK41573.1?download=true 
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGK41573.1?download=true >H7N9_HA.fa
-awk '/^>/{print "> H7N9_duck " ++i; next}{print}' H7N9_HA.fa > header_H7N9_HA.fa
-H8
-H8N1 (northern shoveler)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AHL82381.1?download=true 
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AHL82381.1?download=true >H8N1_HA.fa
-awk '/^>/{print "> H8N1_northern_shoveler " ++i; next}{print}' H8N1_HA.fa > header_H8N1_HA.fa
-	H8N2 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/ABI85240.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ABI85240.1?download=true >H8N2_HA.fa
-awk '/^>/{print "> H8N2_duck " ++i; next}{print}' H8N2_HA.fa > header_H8N2_HA.fa
-	H8N3 (teal) / (Perdix perdix)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/ADP07005.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ADP07005.1?download=true >H8N3_HA.fa
-awk '/^>/{print "> H8N3_teal " ++i; next}{print}' H8N3_HA.fa > header_H8N3_HA.fa
-	H8N4 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/BAG66275.1?download=true 
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' BAG66275.1?download=true >H8N4_HA.fa
-awk '/^>/{print "> H8N4_duck " ++i; next}{print}' H8N4_HA.fa > header_H8N4_HA.fa
-	H8N5 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/BAL70263.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' BAL70263.1?download=true >H8N5_HA.fa
-awk '/^>/{print "> H8N5_duck" ++i; next}{print}' H8N5_HA.fa > header_H8N5_HA.fa
-	H8N6 (ruddy shelduck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AGU01971.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGU01971.1?download=true >H8N6_HA.fa
-awk '/^>/{print "> H8N6_ruddy_shelduck" ++i; next}{print}' H8N6_HA.fa > header_H8N6_HA.fa
-	H8N7 (duck)
-curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/BAG66256.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' BAG66256.1?download=true >H8N7_HA.fa
-awk '/^>/{print "> H8N7_duck" ++i; next}{print}' H8N7_HA.fa > header_H8N7_HA.fa
-	H8N8 (teal)
+		   curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/APW83915.1?download=true
+		   awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}'APW83915.1?download=true> H1N2_HA.fa
+		   awk '/^>/{print "> H1N2_Duck" ++i; next}{print}' H1N2_HA.fa > header_H1N2_HA.fa
+	      #H1N3 (Duck) 
+		   curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AGH30612.1?download=true
+		   awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}'AGH30612.1?download=true> H1N3_HA.fa
+		   awk '/^>/{print "> H1N3_Duck" ++i; next}{print}' H1N3_HA.fa > header_H1N3_HA.fa
+	       #H1N4 (Duck)
+		   curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AGR54646.1?download=true
+		   awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGR54646.1?download=true>H1N4_HA.fa
+		   awk '/^>/{print "> H1N4_Duck" ++i; next}{print}' H1N4_HA.fa > header_H1N4_HA.fa
+	       #H1N5 (Duck)
+                   curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/BAJ07978.1?download=true
+                   awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}'BAJ07978.1?download=true> H1N5_HA.fa
+                   awk '/^>/{print "> H1N5_Duck" ++i; next}{print}' H1N5_HA.fa > header_H1N5_HA.fa
+               #H1N6 (Mallard)
+		   curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ADR00746.1?download=true
+		   awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}'ADR00746.1?download=true> H1N6_HA.fa
+		   awk '/^>/{print "> H1N6_Mallard" ++i; next}{print}' H1N6_HA.fa > header_H1N6_HA.fa
+	       #H1N7 (ruddy turnstone)
+		   curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AGL60569.1?download=true
+		   awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}'AGL60569.1?download=true> H1N7_HA.fa
+		   awk '/^>/{print "> H1N7_ruddy_turnstone " ++i; next}{print}' H1N7_HA.fa > header_H1N7_HA.fa
+               #H1N8 (mallard)
+		   curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AHL81601.1?download=true
+		   awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}'AHL81601.1?download=true> H1N8_HA.fa
+		   awk '/^>/{print "> H1N8_mallard " ++i; next}{print}' H1N8_HA.fa > header_H1N8_HA.fa
+               #H1N9 (mallard)
+		  curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AGG29035.1?download=true
+		  awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}'AGG29035.1?download=true> H1N9_HA.fa
+		  awk '/^>/{print "> H1N9_mallard " ++i; next}{print}' H1N9_HA.fa > header_H1N9_HA.fa
+	       #H2N1 (duck) 
+		   curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AHN00441.1?download=true
+		   awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}'AHN00441.1?download=true> H2N1_HA.fa
+		   awk '/^>/{print "> H2N1_duck " ++i; next}{print}' H2N1_HA.fa > header_H2N1_HA.fa
+	       #H2N2 (duck)
+		   curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AIG94040.1?download=true 
+		   awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}'AIG94040.1?download=true> H2N2_HA.fa
+		   awk '/^>/{print "> H2N2_duck " ++i; next}{print}' H2N2_HA.fa > header_H2N2_HA.fa
+	       #H2N3 (duck)
+		   curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AHZ39487.1?download=true 
+		   awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}'AHZ39487.1?download=true> H2N3_HA.fa
+		   awk '/^>/{print "> H2N3_duck " ++i; next}{print}' H2N3_HA.fa > header_H2N3_HA.fa
+	       #H2N4 (mallard)
+		   curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ALZ46891.1?download=true
+		   awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}'ALZ46891.1?download=true> H2N4_HA.fa
+		   awk '/^>/{print "> H2N4_mallard " ++i; next}{print}' H2N4_HA.fa > header_H2N4_HA.fa
+		#H2N5 (mallard)
+		   curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AAT65325.1?download=true
+		   awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}'AAT65325.1?download=true> H2N5_HA.fa
+		   awk '/^>/{print "> H2N5_mallard " ++i; next}{print}' H2N5_HA.fa > header_H2N5_HA.fa
+		#H2N6 (mallard)
+			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ALZ47458.1?download=true 
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}'ALZ47458.1?download=true> H2N6_HA.fa
+			awk '/^>/{print "> H2N6_mallard " ++i; next}{print}' H2N6_HA.fa > header_H2N6_HA.fa
+		#H2N7 (duck)
+			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AGR54671.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGR54671.1?download=true > H2N7_HA.fa
+			awk '/^>/{print "> H2N7_duck " ++i; next}{print}' H2N7_HA.fa > header_H2N7_HA.fa
+		#H2N8 (duck)
+			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AGL07492.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGL07492.1?download=true> H2N8_HA.fa
+			awk '/^>/{print "> H2N8_duck " ++i; next}{print}' H2N8_HA.fa > header_H2N8_HA.fa
+		#H2N9 (duck)
+			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AQS25206.1?download=true 
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AQS25206.1?download=true > H2N9_HA.fa
+			awk '/^>/{print "> H2N9_duck " ++i; next}{print}' H2N9_HA.fa > header_H2N9_HA.fa
+		#H3N1 (duck)
+			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ATI21278.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ATI21278.1?download=true > H3N1_HA.fa
+			awk '/^>/{print "> H3N1_duck " ++i; next}{print}' H3N1_HA.fa > header_H3N1_HA.fa
+		#H3N2 (duck)
+			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AJS16375.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AJS16375.1?download=true> H3N2_HA.fa
+			awk '/^>/{print "> H3N2_duck " ++i; next}{print}' H3N2_HA.fa > header_H3N2_HA.fa
+		#H3N3 (duck)
+			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/BBC69224.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' BBC69224.1?download=true > H3N3_HA.fa
+			awk '/^>/{print "> H3N3_duck " ++i; next}{print}' H3N3_HA.fa > header_H3N3_HA.fa
+		#H3N4 (duck/ mallard)
+			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ABB19704.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ABB19704.1?download=true > H3N4_HA.fa
+			awk '/^>/{print "> H3N4_duck_mallard " ++i; next}{print}' H3N4_HA.fa > header_H3N4_HA.fa
+		#H3N5 (duck)
+			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/BAL70284.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' BAL70284.1?download=true > H3N5_HA.fa
+			awk '/^>/{print "> H3N5_duck " ++i; next}{print}' H3N5_HA.fa > header_H3N5_HA.fa
+		#H3N6 (duck)
+			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AHI97157.1?download=true 
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AHI97157.1?download=true > H3N6_HA.fa
+			awk '/^>/{print "> H3N6_duck " ++i; next}{print}' H3N6_HA.fa > header_H3N6_HA.fa
+		#H3N7 (mallard)
+			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AGG83461.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGG83461.1?download=true > H3N7_HA.fa
+			awk '/^>/{print "> H3N7_mallard" ++i; next}{print}' H3N7_HA.fa > header_H3N7_HA.fa
+		#H3N8 (mallard)
+			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AQS26257.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AQS26257.1?download=true > H3N8_HA.fa
+			awk '/^>/{print "> H3N8_mallard " ++i; next}{print}' H3N8_HA.fa > header_H3N8_HA.fa
+		#H3N9 (duck)
+			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AFY06239.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AFY06239.1?download=true >H3N9_HA.fa
+			awk '/^>/{print "> H3N9_duck " ++i; next}{print}' H3N9_HA.fa > header_H3N9_HA.fa
+		#H4N1 (duck)
+			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/BAF46754.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' BAF46754.1?download=true >H4N1_HA.fa
+			awk '/^>/{print "> H4N1_duck " ++i; next}{print}' H4N1_HA.fa > header_H4N1_HA.fa
+		#H4N2 (duck)
+			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ACX55897.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ACX55897.1?download=true >H4N2_HA.fa
+			awk '/^>/{print "> H4N2_duck " ++i; next}{print}' H4N2_HA.fa > header_H4N2_HA.fa 
+		#H4N3 (duck)
+			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ALP45701.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ALP45701.1?download=true >H4N3_HA.fa
+			awk '/^>/{print "> H4N3_duck " ++i; next}{print}' H4N3_HA.fa > header_H4N3_HA.fa
+		#H4N4 (duck)
+			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ABI84423.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ABI84423.1?download=true >H4N4_HA.fa
+			awk '/^>/{print "> H4N4_duck " ++i; next}{print}' H4N4_HA.fa > header_H4N4_HA.fa
+		#H4N5 (mallard)
+			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AHM97698.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AHM97698.1?download=true >H4N5_HA.fa
+			awk '/^>/{print "> H4N5_mallard " ++i; next}{print}' H4N5_HA.fa > header_H4N5_HA.fa
+		#H4N6 (duck)
+			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AHN13689.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AHN13689.1?download=true >H4N6_HA.fa
+			awk '/^>/{print "> H4N6_duck " ++i; next}{print}' H4N6_HA.fa > header_H4N6_HA.fa
+		#H4N7 (duck)
+			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ACX55888.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ACX55888.1?download=true>H4N7_HA.fa
+			awk '/^>/{print "> H4N7_duck " ++i; next}{print}' H4N7_HA.fa > header_H4N7_HA.fa
+		#H4N8 (duck)
+			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ACX55885.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ACX55885.1?download=true >H4N8_HA.fa
+			awk '/^>/{print "> H4N8_duck " ++i; next}{print}' H4N8_HA.fa > header_H4N8_HA.fa
+		#H4N9 (mallard) 
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AHL80167.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AHL80167.1?download=true >H4N9_HA.fa
+			awk '/^>/{print "> H4N9_mallard " ++i; next}{print}' H4N9_HA.fa > header_H4N9_HA.fa
+		#H5N1 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/ABO64692.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ABO64692.1?download=true>H5N1_HA.fa 
+			awk '/^>/{print "> H5N1_duck " ++i; next}{print}' H5N1_HA.fa > header_H5N1_HA.fa
+		#H5N2 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/ACR09566.1?download=true 
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ACR09566.1?download=true >H5N2_HA.fa
+			awk '/^>/{print "> H5N2_duck " ++i; next}{print}' H5N2_HA.fa > header_H5N2_HA.fa
+		#H5N3 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/ACR66926.1?download=true 
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ACR66926.1?download=true >H5N3_HA.fa
+			awk '/^>/{print "> H5N3_duck " ++i; next}{print}' H5N3_HA.fa > header_H5N3_HA.fa
+		#H5N4 (mallard)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AMX73132.1?download=true 
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AMX73132.1?download=true  >H5N4_HA.fa
+			awk '/^>/{print "> H5N4_mallard " ++i; next}{print}' H5N4_HA.fa > header_H5N4_HA.fa
+		#H5N5 (duck) 
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/ADD10580.1?download=true 
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ADD10580.1?download=true  >H5N5_HA.fa
+			awk '/^>/{print "> H5N5_duck " ++i; next}{print}' H5N5_HA.fa > header_H5N5_HA.fa
+		#H5N6 (duck)
+			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AIR93950.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AIR93950.1?download=true >H5N6_HA.fa
+			awk '/^>/{print "> H5N6_duck " ++i; next}{print}' H5N6_HA.fa > header_H5N6_HA.fa
+		#H5N7 (mallard) 
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AAT07996.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AAT07996.1?download=true  >H5N7_HA.fa
+			awk '/^>/{print "> H5N7_mallard " ++i; next}{print}' H5N7_HA.fa > header_H5N7_HA.fa
+		#H5N8 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AHI97159.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AHI97159.1?download=true >H5N8_HA.fa
+			awk '/^>/{print "> H5N8_duck " ++i; next}{print}' H5N8_HA.fa > header_H5N8_HA.fa
+		#H5N9(duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AGI65009.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGI65009.1?download=true  >H5N9_HA.fa 
+			awk '/^>/{print "> H5N9_duck " ++i; next}{print}' H5N9_HA.fa > header_H5N9_HA.fa
+		#H6N1 (duck) 
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/ABD35522.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ABD35522.1?download=true >H6N1_HA.fa
+			awk '/^>/{print "> H6N1_duck " ++i; next}{print}' H6N1_HA.fa > header_H6N1_HA.fa
+		#H6N2 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AJM71243.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AJM71243.1?download=true >H6N2_HA.fa
+			awk '/^>/{print "> H6N2_duck " ++i; next}{print}' H6N2_HA.fa > header_H6N2_HA.fa
+		#H6N3 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/ABB19184.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ABB19184.1?download=true > H6N3_HA.fa
+			awk '/^>/{print "> H6N3_duck " ++i; next}{print}' H6N3_HA.fa > header_H6N3_HA.fa
+		#H6N4 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/APC32831.1?download=true 
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' APC32831.1?download=true >H6N4_HA.fa
+			awk '/^>/{print "> H6N4_duck " ++i; next}{print}' H6N4_HA.fa > header_H6N4_HA.fa
+		#H6N5 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/APC30385.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' APC30385.1?download=true >H6N5_HA.fa
+			awk '/^>/{print "> H6N5_duck " ++i; next}{print}' H6N5_HA.fa > header_H6N5_HA.fa
+		#H6N6 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AKZ41797.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AKZ41797.1?download=true >H6N6_HA.fa
+			awk '/^>/{print "> H6N6_duck " ++i; next}{print}' H6N6_HA.fa > header_H6N6_HA.fa
+		#H6N7 (mallard)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AGK41573.1?download=true 
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGK41573.1?download=true >H6N7_HA.fa
+			awk '/^>/{print "> H6N7_mallard " ++i; next}{print}' H6N7_HA.fa > header_H6N7_HA.fa
+		#H6N8 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AJM71266.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AJM71266.1?download=true >H6N8_HA.fa
+			awk '/^>/{print "> H6N8_duck " ++i; next}{print}' H6N8_HA.fa > header_H6N8_HA.fa
+		#H6N9 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/CAC84240.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' CAC84240.1?download=true >H6N9_HA.fa
+			awk '/^>/{print "> H6N9_duck " ++i; next}{print}' H6N9_HA.fa > header_H6N9_HA.fa
+		#H7N1 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/BAF02932.2?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' BAF02932.2?download=true >H7N1_HA.fa
+			awk '/^>/{print "> H7N1_duck " ++i; next}{print}' H7N1_HA.fa > header_H7N1_HA.fa
+		#H7N2 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/BAQ21385.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' BAQ21385.1?download=true >H7N2_HA.fa
+			awk '/^>/{print "> H7N2_duck " ++i; next}{print}' H7N2_HA.fa > header_H7N2_HA.fa
+		#H7N3 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AQS25989.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AQS25989.1?download=true >H7N3_HA.fa
+			awk '/^>/{print "> H7N3_duck " ++i; next}{print}' H7N3_HA.fa> header_H7N3_HA.fa
+		#H7N4 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AGW25713.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGW25713.1?download=true > H7N4_HA.fa
+			awk '/^>/{print "> H7N4_duck " ++i; next}{print}' H7N4_HA.fa > header_H7N4_HA.fa
+		#H7N5 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/ABB87751.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ABB87751.1?download=true >H7N5_HA.fa
+			awk '/^>/{print "> H7N5_duck " ++i; next}{print}' H7N5_HA.fa > header_H7N5_HA.fa
+		#H7N6 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AFO83210.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AFO83210.1?download=true >H7N6_HA.fa
+			awk '/^>/{print "> H7N6_duck " ++i; next}{print}' H7N6_HA.fa > header_H7N6_HA.fa
+		#H7N7 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/BAQ21375.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' BAQ21375.1?download=true >H7N7_HA.fa
+			awk '/^>/{print "> H7N7_duck " ++i; next}{print}' H7N7_HA.fa > header_H7N7_HA.fa
+		#H7N8 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AGQ80991.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGQ80991.1?download=true >H7N8_HA.fa
+			awk '/^>/{print "> H7N8_duck " ++i; next}{print}' H7N8_HA.fa > header_H7N8_HA.fa
+		#H7N9 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AGK41573.1?download=true 
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGK41573.1?download=true >H7N9_HA.fa
+			awk '/^>/{print "> H7N9_duck " ++i; next}{print}' H7N9_HA.fa > header_H7N9_HA.fa
+		#H8N1 (northern shoveler)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AHL82381.1?download=true 
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AHL82381.1?download=true >H8N1_HA.fa
+			awk '/^>/{print "> H8N1_northern_shoveler " ++i; next}{print}' H8N1_HA.fa > header_H8N1_HA.fa
+		#H8N2 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/ABI85240.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ABI85240.1?download=true >H8N2_HA.fa
+			awk '/^>/{print "> H8N2_duck " ++i; next}{print}' H8N2_HA.fa > header_H8N2_HA.fa
+		#H8N3 (teal) / (Perdix perdix)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/ADP07005.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ADP07005.1?download=true >H8N3_HA.fa
+			awk '/^>/{print "> H8N3_teal " ++i; next}{print}' H8N3_HA.fa > header_H8N3_HA.fa
+		#H8N4 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/BAG66275.1?download=true 
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' BAG66275.1?download=true >H8N4_HA.fa
+			awk '/^>/{print "> H8N4_duck " ++i; next}{print}' H8N4_HA.fa > header_H8N4_HA.fa
+		#H8N5 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/BAL70263.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' BAL70263.1?download=true >H8N5_HA.fa
+			awk '/^>/{print "> H8N5_duck" ++i; next}{print}' H8N5_HA.fa > header_H8N5_HA.fa
+		#H8N6 (ruddy shelduck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AGU01971.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGU01971.1?download=true >H8N6_HA.fa
+			awk '/^>/{print "> H8N6_ruddy_shelduck" ++i; next}{print}' H8N6_HA.fa > header_H8N6_HA.fa
+		#H8N7 (duck)
+			curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/BAG66256.1?download=true
+			awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' BAG66256.1?download=true >H8N7_HA.fa
+			awk '/^>/{print "> H8N7_duck" ++i; next}{print}' H8N7_HA.fa > header_H8N7_HA.fa
+		#H8N8 (teal)
 curl -LO  https://www.ebi.ac.uk/ena/browser/api/fasta/AEO22147.1?download=true
 awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AEO22147.1?download=true >H8N8_HA.fa
 awk '/^>/{print "> H8N8_teal" ++i; next}{print}' H8N8_HA.fa > header_H8N8_HA.fa
@@ -630,24 +623,22 @@ curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AQY17922.1?download=true
 
 awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AQY17922.1?download=true > H15N9_HA.fa
 awk '/^>/{print "> H15N9_duck " ++i; next}{print}' H15N9_HA.fa > header_H15N9_HA.fa
-H16
-	H16N3 (duck)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/BAO94331.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' BAO94331.1?download=true > H16N3_HA.fa
-awk '/^>/{print "> H16N3_duck " ++i; next}{print}' H16N3_HA.fa > header_H16N3_HA.fa
-	H16N9 (gull)
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AGK24021.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGK24021.1?download=true > H16N9_HA.fa
-awk '/^>/{print "> H16N9_gull " ++i; next}{print}' H16N9_HA.fa > header_H16N9_HA.fa
-# Downloaded H17N10 HA
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ CY103892.1?download=true 
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' CY103892.1?download=true >H17N10_HA.fasta
-awk '/^>/{print "> H17N10_bat_" ++i; next}{print}' H17N10_HA.fasta > header_H17N10_HA.fa
-
-# Downloaded   H18N11 hemagglutinin (HA) 
-curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/CY125945.1?download=true
-awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' CY125945.1?download=true > H18N11_HA.fasta
-	awk '/^>/{print "> H18N11_bat_" ++i; next}{print}' H18N11_HA.fasta > header_H18N11_HA.fa
+	#H16N3 (duck)
+		curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/BAO94331.1?download=true
+		awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' BAO94331.1?download=true > H16N3_HA.fa
+		awk '/^>/{print "> H16N3_duck " ++i; next}{print}' H16N3_HA.fa > header_H16N3_HA.fa
+	#H16N9 (gull)
+		curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AGK24021.1?download=true
+		awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGK24021.1?download=true > H16N9_HA.fa
+		awk '/^>/{print "> H16N9_gull " ++i; next}{print}' H16N9_HA.fa > header_H16N9_HA.fa
+	# Downloaded H17N10 HA
+		curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ CY103892.1?download=true 
+		awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' CY103892.1?download=true >H17N10_HA.fasta
+		awk '/^>/{print "> H17N10_bat_" ++i; next}{print}' H17N10_HA.fasta > header_H17N10_HA.fa
+	# Downloaded   H18N11 hemagglutinin (HA) 
+		curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/CY125945.1?download=true
+		awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' CY125945.1?download=true > H18N11_HA.fasta
+		awk '/^>/{print "> H18N11_bat_" ++i; next}{print}' H18N11_HA.fasta > header_H18N11_HA.fa
 
 cat header_H1N1_HA.fa header_H1N2_HA.fa header_H1N3_HA.fa header_H1N4_HA.fa header_H1N5_HA.fa header_H1N6_HA.fa header_H1N7_HA.fa header_H1N8_HA.fa header_H1N9_HA.fa header_H2N1_HA.fa header_H2N2_HA.fa header_H2N3_HA.fa header_H2N4_HA.fa header_H2N5_HA.fa header_H2N6_HA.fa header_H2N7_HA.fa header_H2N8_HA.fa header_H2N9_HA.fa header_H3N1_HA.fa header_H3N2_HA.fa header_H3N3_HA.fa header_H3N4_HA.fa header_H3N5_HA.fa header_H3N6_HA.fa header_H3N7_HA.fa header_H3N8_HA.fa header_H3N9_HA.fa header_H4N1_HA.fa header_H4N2_HA.fa header_H4N3_HA.fa header_H4N4_HA.fa header_H4N5_HA.fa header_H4N6_HA.fa header_H4N7_HA.fa header_H4N8_HA.fa header_H4N9_HA.fa header_H5N1_HA.fa header_H5N2_HA.fa header_H5N3_HA.fa header_H5N4_HA.fa header_H5N5_HA.fa header_H5N6_HA.fa header_H5N7_HA.fa header_H5N8_HA.fa header_H5N9_HA.fa header_H6N1_HA.fa header_H6N2_HA.fa header_H6N3_HA.fa header_H6N4_HA.fa header_H6N5_HA.fa header_H6N6_HA.fa header_H6N7_HA.fa header_H6N8_HA.fa header_H6N9_HA.fa header_H7N1_HA.fa header_H7N2_HA.fa header_H7N3_HA.fa header_H7N4_HA.fa header_H7N5_HA.fa header_H7N6_HA.fa header_H7N7_HA.fa header_H7N8_HA.fa header_H7N9_HA.fa header_H8N1_HA.fa header_H8N2_HA.fa header_H8N3_HA.fa header_H8N4_HA.fa header_H8N5_HA.fa header_H8N6_HA.fa header_H8N7_HA.fa header_H8N8_HA.fa header_H9N1_HA.fa header_H9N2_HA.fa header_H9N3_HA.fa header_H9N4_HA.fa header_H9N5_HA.fa header_H9N6_HA.fa header_H9N7_HA.fa header_H9N8_HA.fa header_H9N9_HA.fa header_H10N1_HA.fa header_H10N2_HA.fa header_H10N3_HA.fa header_H10N4_HA.fa header_H10N5_HA.fa header_H10N6_HA.fa header_H10N7_HA.fa header_H10N8_HA.fa header_H10N9_HA.fa header_H11N1_HA.fa header_H11N2_HA.fa header_H11N3_HA.fa header_H11N4_HA.fa header_H11N5_HA.fa header_H11N6_HA.fa header_H11N7_HA.fa header_H11N8_HA.fa header_H11N9_HA.fa header_H12N1_HA.fa header_H12N2_HA.fa header_H12N3_HA.fa header_H12N4_HA.fa header_H12N5_HA.fa header_H12N6_HA.fa header_H12N7_HA.fa header_H12N8_HA.fa header_H12N9_HA.fa header_H13N1_HA.fa header_H13N2_HA.fa header_H13N3_HA.fa header_H13N4_HA.fa header_H13N6_HA.fa header_H13N8_HA.fa header_H13N9_HA.fa header_H14N2_HA.fa header_H14N3_HA.fa header_H14N4_HA.fa header_H14N5_HA.fa header_H14N6_HA.fa header_H14N7_HA.fa header_H14N8_HA.fa header_H15N2_HA.fa header_H15N4_HA.fa header_H15N6_HA.fa header_H15N7_HA.fa header_H15N8_HA.fa header_H15N9_HA.fa header_H16N3_HA.fa header_H16N9_HA.fa header_H18N11_HA.fa header_H17N10_HA.fa > Influenza_HA_Phylogenetics_Tree.fa
 
