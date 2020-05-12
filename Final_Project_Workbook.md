@@ -182,6 +182,7 @@ The "ls" command can then be used to ensure our directory is clear.
 
 *Disclaimer: If using Jetstream or coding platform with a large storage component then the file from each BLAST analysis do not have to be removed right away. Our study choose to remove the data ater each analysis to avoid any coding complications. If one of these larger storage component platforms are used it is recommended that the cat file for each indvidual BLAST analysis has ts own unique name to avoid complication.*
 # Phylogenomic Analysis
+A phylogenomic analysis of the HA and NA proteins was done in this study to observe the evolutionary relationship between H17N10 and H18N11 and known evolutionary relationships. Avian HA and NA proteins were utilized for this analysis because avian-species have all known influenza A subtypes besides H17N10 and H18N11 (Olson et al. 2014; “Influenza Type A Viruses” 2017).Another reason avian influenza was used as a model is because most human-infecting influenza A viruses are suspected of having avian origin (Mostafa et al. 2018). Due to this avian-human zoono
   # Phylogenomic analysis of the HA proteins in Influenza A subtypes:
   The phylogenomic analysis of the HA protein begins with downloading and formating the imported data from the ENA database. Due to the quantity of data being downloaded it is essential that the directory is cleared by using the "ls" command. After the directory is clear, the data can be downloaded and formated properly. 
   The following downloaded data is broken down by the HA variables:
