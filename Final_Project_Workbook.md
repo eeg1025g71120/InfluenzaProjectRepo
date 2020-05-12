@@ -1,12 +1,33 @@
 # Analysis of Influenza H18N11 and H17N10 Hemagglutinin and Neuraminidase Proteins Through BLAST Analysis and Phylogenomic to Access Zoonotic Potential
-  This is the workbook being used for my project on human succeptibility to bat influenza.
+This is the workbook being used for my project on human succeptibility to bat influenza.
+# Background
   It has recenty been discovered that bats are hosts for two unique strands of Influenza A virus: H18N11 and H17N10. Due to these viruses being newly discovered little is known about the viruses' zoonotic potential. This study is designed to access H17N10 and H18N11's zoonotic potential through analysis of the hemagglutinin (HA) and neuraminidase (NA) proteins. HA and NA are essential proteins involved in the influenza virus' replication. If the virus lacked these proteins it wouldn't be able to replicate, and thus lose its virulence factor.  This study analyzes the potential zoonosis of the HA and NA proteins in H17N10 and H178N11 through the use of BLAST and phylogenomic analysis.
- 	
+# The Setup: The Materials and Programs Needed for these Analyses
+Materials Needed:
+ * PC for coding (A Lenova Yoga 730 was used in this study)
+ * Preffered coding terminal (PuTTY was used in this study)
+ * A high preformance cluster (Ron was used in this study)
+ * An Atmosphere/Jetstream account is recommended, however it was not utilized in this study due to connectivity and speed issues.
+ * Access to ENA database (https://www.ebi.ac.uk/ena/browser/home)
+ Programs Utilized:
+ * BLAST
+ * MAFFT
+ * iqTree
+ * FigTree v1.4.4 (which can be downloaded from: https://github.com/rambaut/figtree/releases)
+# Setting up and Downloading Programs 
+The first step for our analysis was to log onto Ron and to create a new directory to house our downloaded data in:
+	
 	mkdir Influenza_Analysis
- 	cd  Influenza_Analysis
-	
-	
+Then we can move into our newly made directory:
+ 	
+	cd  Influenza_Analysis
+While Jetstream wasn't used in this analysis due to connectivity issues, a "Ubuntu 18_04 Devel and Docker" instance with a M1.xxlarge size is recommended.
+Now that our setup is complete we can move onto the analyses
+# BLAST
+The BLAST analysis of the HA and NA proteins of H17N10 and H18N11 is done to access if the two bat-derived influenza strains share genes with human-infecting influenza strains. The human strains used for this BLAST analysis are H1N1, H2N2, H3N2, and H5N1. The BLAST anlaysis is broken down into 4 parts:BLAST Analysis of H17N10's HA protein, BLAST Analysis of H18N11's HA protein, BLAST Analysis of H17N10's NA protein, BLAST Analysis of H18N11's NA protein.
 # Blast Analysis of H17N10's HA protein
+The BLAST analysis of H17N10's HA protein begins with downloading and formating the imported data from the ENA database.
+
     #Download H1N1
             curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ABP49327.1?download=true
             awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ABP49327.1?download=true >H1N1_HA.fasta
@@ -22,14 +43,26 @@
     #Download H17N10
             curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/CY103892.1?download=true 
             awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' CY103892.1?download=true >H17N10_HA.fasta
-    #Combine Human Influenza Strains
-            cat H1N1_HA.fasta H2N2_HA.fasta H3N2_HA.fasta H5N1_HA.fasta > Human_Influenza_Viruses.fasta
-    # BLAST
-        makeblastdb -in Human_Influenza_Viruses.fasta -out influenza -dbtype prot
+The human-infecting influenza strains are then combined into a fasta file to be used as a reference database in the BLAST analyis:
+
+             cat H1N1_HA.fasta H2N2_HA.fasta H3N2_HA.fasta H5N1_HA.fasta > Human_Influenza_Viruses.fasta
+	     
+  A BLAST database is then made
+       
+       makeblastdb -in Human_Influenza_Viruses.fasta -out influenza -dbtype prot
+  - in is signiling the file input. This should be the output of your previous cat command.
+  -out is signaling the output file. This is what you want your database is referencing
+  prot - is signaling that the data being used in this acessment is protein coded data
+  
+  
+  A BLAST analysis can then occur using the H17N10 as our query, or our file of interest:
+  
         blastp -db influenza -max_target_seqs 1 -query H17H10_HA.fasta -outfmt '6 qseqid qlen length pident gaps evalue stitle' -evalue 1e-10 -num_threads 6 -out blast.out
-      # view BLAST
+   
+   The BLAST file can then be viewed using:
+   
           less blast.out
-     # remove all of the blast files with rm
+Due to Ron's limited space all files should be removed using the rm command.
 # Blast Analysis of H18N11's HA protein
     #Download H1N1
             curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ABP49327.1?download=true
