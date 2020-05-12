@@ -23,7 +23,7 @@ Then we can move into our newly made directory:
  	
 	cd  Influenza_Analysis
 While Jetstream wasn't used in this analysis due to connectivity issues, a "Ubuntu 18_04 Devel and Docker" instance with a M1.xxlarge size is recommended.
-Now that our setup is complete we can move onto the analyses
+Now that our setup is complete we can move onto the analyses.
 # BLAST
 The BLAST analysis of the HA and NA proteins of H17N10 and H18N11 is done to access if the two bat-derived influenza strains share genes with human-infecting influenza strains. The human strains used for this BLAST analysis are H1N1, H2N2, H3N2, and H5N1. The BLAST anlaysis is broken down into 4 parts:BLAST Analysis of H17N10's HA protein, BLAST Analysis of H18N11's HA protein, BLAST Analysis of H17N10's NA protein, BLAST Analysis of H18N11's NA protein.
 # Blast Analysis of H17N10's HA protein
