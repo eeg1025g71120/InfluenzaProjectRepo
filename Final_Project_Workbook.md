@@ -3,7 +3,7 @@ This is the workbook being used for my project on human succeptibility to bat in
 # Background
   It has recenty been discovered that bats are hosts for two unique strands of Influenza A virus: H18N11 and H17N10. Due to these viruses being newly discovered little is known about the viruses' zoonotic potential. This study is designed to access H17N10 and H18N11's zoonotic potential through analysis of the hemagglutinin (HA) and neuraminidase (NA) proteins. HA and NA are essential proteins involved in the influenza virus' replication. If the virus lacked these proteins it wouldn't be able to replicate, and thus lose its virulence factor.  This study analyzes the potential zoonosis of the HA and NA proteins in H17N10 and H178N11 through the use of BLAST and phylogenomic analysis.
 
-![Bat](Weaver, Robert E, (1977) Bat. Retrieved from the Digital Public Library of America, http://digital.library.illinoisstate.edu/cdm/ref/collection/p15990coll11/id/9)
+![Bat](http://digital.library.illinoisstate.edu/cdm/ref/collection/p15990coll11/id/9)
 
 # The Setup: The Materials and Programs Needed for these Analyses
 Materials Needed:
