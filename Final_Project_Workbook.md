@@ -747,6 +747,7 @@ This should be the viewed result of the "cat" command:
   # Phylogenomic analysis of the NA protein in Influenza A subtypes:
   The phylogenomic analysis of the NA protein, again begins with downloading and formating the imported data from the ENA database. Due to the quantity of data being downloaded it is essential that we clear the directory from the previous tree This can be done using the "ls" command. After the directory is clear, the data can be downloaded and formated properly. 
   The following downloaded data is broken down by the HA variables:
+  
   	# Download Reference Strains
 		#H1N1 (Duck)
 			curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AAF77038.1?download=true
