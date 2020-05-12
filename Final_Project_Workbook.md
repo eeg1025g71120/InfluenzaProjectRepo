@@ -9,7 +9,7 @@ Materials Needed:
  * A high preformance cluster (Ron was used in this study)
  * An Atmosphere/Jetstream account is recommended, however it was not utilized in this study due to connectivity and speed issues.
  * Access to ENA database (https://www.ebi.ac.uk/ena/browser/home)
- Programs Utilized:
+Programs Utilized:
  * BLAST
  * MAFFT
  * iqTree
@@ -26,7 +26,7 @@ Now that our setup is complete we can move onto the analyses
 # BLAST
 The BLAST analysis of the HA and NA proteins of H17N10 and H18N11 is done to access if the two bat-derived influenza strains share genes with human-infecting influenza strains. The human strains used for this BLAST analysis are H1N1, H2N2, H3N2, and H5N1. The BLAST anlaysis is broken down into 4 parts:BLAST Analysis of H17N10's HA protein, BLAST Analysis of H18N11's HA protein, BLAST Analysis of H17N10's NA protein, BLAST Analysis of H18N11's NA protein.
 # Blast Analysis of H17N10's HA protein
-The BLAST analysis of H17N10's HA protein begins with downloading and formating the imported data from the ENA database.
+The BLAST analysis of H17N10's HA protein begins with downloading and formating the imported data from the ENA database:
 
     #Download H1N1
             curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ABP49327.1?download=true
@@ -47,12 +47,12 @@ The human-infecting influenza strains are then combined into a fasta file to be 
 
              cat H1N1_HA.fasta H2N2_HA.fasta H3N2_HA.fasta H5N1_HA.fasta > Human_Influenza_Viruses.fasta
 	     
-  A BLAST database is then made
+  A BLAST database is then made:
        
        makeblastdb -in Human_Influenza_Viruses.fasta -out influenza -dbtype prot
-  - in is signiling the file input. This should be the output of your previous cat command.
-  -out is signaling the output file. This is what you want your database is referencing
-  prot - is signaling that the data being used in this acessment is protein coded data
+  "- in" is signiling the file input. This should be the output of your previous cat command.
+  "-out" is signaling the output file. This is what you want your database is referencing
+  "prot" is signaling that the data being used in this acessment is protein coded data
   
   
   A BLAST analysis can then occur using the H17N10 as our query, or our file of interest:
@@ -63,7 +63,10 @@ The human-infecting influenza strains are then combined into a fasta file to be 
    
           less blast.out
 Due to Ron's limited space all files should be removed using the rm command.
+The "ls" command can then be used to ensure our directory is clear.
 # Blast Analysis of H18N11's HA protein
+Similar to the above coding, the BLAST analysis of H18N11's HA protein begins with downloading and formating the imported data from the ENA database:
+
     #Download H1N1
             curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ABP49327.1?download=true
             awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ABP49327.1?download=true >H1N1_HA.fasta
@@ -79,17 +82,29 @@ Due to Ron's limited space all files should be removed using the rm command.
     #Download H18N11
             curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/CY125945.1?download=true
             awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' CY125945.1?download=true > H18N11_HA.fasta
-    #Combine Human Influenza Strains
+Again, the human-infecting influenza strains are then combined into a fasta file to be used as a reference database in the BLAST analyis:
+
             cat H1N1_HA.fasta H2N2_HA.fasta H3N2_HA.fasta H5N1_HA.fasta > Human_Influenza_Viruses.fasta
-     # BLAST
+  A BLAST database is then made:
+  
         makeblastdb -in Human_Influenza_Viruses.fasta -out influenza -dbtype prot
-        blastp -db influenza -max_target_seqs 1 -query H18H11_HA.fasta -outfmt '6 qseqid qlen length pident gaps evalue stitle' -evalue 1e-10 -num_threads 6 -out blast.out
-     # view BLAST
+  "- in" is signiling the file input. This should be the output of your previous cat command.
+  "-out" is signaling the output file. This is what you want your database is referencing
+  "prot" is signaling that the data being used in this acessment is protein coded data
+  
+  A BLAST analysis can then occur using the H18N11 as our query, or our file of interest:
+       
+       blastp -db influenza -max_target_seqs 1 -query H18H11_HA.fasta -outfmt '6 qseqid qlen length pident gaps evalue stitle' -evalue 1e-10 -num_threads 6 -out blast.out
+
+ The BLAST file can then be viewed using:
+   
           less blast.out
-     # remove all of the blast files with rm
-     
-     
+Again, due to Ron's limited space all files should be removed using the rm command.     
+ The "ls" command can then be used to ensure our directory is clear.
+ 
 # Blast Analysis of H17N10's NA protein
+Similar to the above codings, the BLAST analysis of H17N10's NA protein begins with downloading and formating the imported data from the ENA database:
+
     #Download H1N1
         curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ABO38057.1?download=true
         awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ABO38057.1?download=true >H1N1_NA.fasta
@@ -105,18 +120,30 @@ Due to Ron's limited space all files should be removed using the rm command.
     #Download H17N10
         curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AFC35430.1?download=true
         awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AFC35430.1?download=true >H17N10_NA.fasta
-     #Combine Human Influenza Strains
+Once again, the human-infecting influenza strains are then combined into a fasta file to be used as a reference database in the BLAST analyis:
+
             cat H1N1_NA.fasta H2N2_NA.fasta H3N2_NA.fasta H5N1_NA.fasta > Human_Influenza_Viruses.fasta
-     # BLAST
+
+ A BLAST database is then made:
+  
         makeblastdb -in Human_Influenza_Viruses.fasta -out influenza -dbtype prot
+ "- in" is signiling the file input. This should be the output of your previous cat command.
+  "-out" is signaling the output file. This is what you want your database is referencing
+  "prot" is signaling that the data being used in this acessment is protein coded data
+  
+  A BLAST analysis can then occur using the H17N10 as our query, or our file of interest:
+
         blastp -db influenza -max_target_seqs 1 -query H17H10_NA.fasta -outfmt '6 qseqid qlen length pident gaps evalue stitle' -evalue 1e-10 -num_threads 6 -out blast.out
-     # view BLAST
+ The BLAST file can then be viewed using:
+   
           less blast.out
-     # remove all of the blast files with rm
-    
+Again, due to Ron's limited space all files should be removed using the rm command.   
+ The "ls" command can then be used to ensure our directory is clear.   
     
     
 # Blast Analysis of H18N11's NA protein
+Similar to the above codings, the BLAST analysis of H18N11's NA protein begins with downloading and formating the imported data from the ENA database:
+
      #Download H1N1
         curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ABO38057.1?download=true
         awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' ABO38057.1?download=true >H1N1_NA.fasta
@@ -132,14 +159,27 @@ Due to Ron's limited space all files should be removed using the rm command.
     #Download H18N11
         curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/AGX84936.1?download=true
         awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' AGX84936.1?download=true > H18N11_NA.fasta
-     #Combine Human Influenza Strains
+Once again, the human-infecting influenza strains are then combined into a fasta file to be used as a reference database in the BLAST analyis:	
+	
             cat H1N1_NA.fasta H2N2_NA.fasta H3N2_NA.fasta H5N1_NA.fasta > Human_Influenza_Viruses.fasta
-     # BLAST
+  A BLAST database is then made:
+
         makeblastdb -in Human_Influenza_Viruses.fasta -out influenza -dbtype prot
+ "- in" is signiling the file input. This should be the output of your previous cat command.
+  "-out" is signaling the output file. This is what you want your database is referencing
+  "prot" is signaling that the data being used in this acessment is protein coded data	
+  
+ A BLAST analysis can then occur using the H18N11 as our query, or our file of interest:
+	
         blastp -db influenza -max_target_seqs 1 -query H18H11_NA.fasta -outfmt '6 qseqid qlen length pident gaps evalue stitle' -evalue 1e-10 -num_threads 6 -out blast.out
-     # view BLAST
+   
+ The BLAST file can then be viewed using:
+   
           less blast.out
-     # remove all of the blast files with rm
+Again, due to Ron's limited space all files should be removed using the rm command.  
+The "ls" command can then be used to ensure our directory is clear.
+
+*Disclaimer If using Jetstream or coding platform with a large storage component then the file from each BLAST analysis do not have to be removed right away. Our study choose to remove the data ater each analysis to avoid any coding complications. If one of these larger storage component platforms are used it is recommended that the cat file for each indvidual BLAST analysis has ts own unique name to avoid complication.*
   # Phylogenomic analysis of the HA proteins in Influenza A subtypes:
        # Download Reference Strains
               #H1N1 (Duck)
