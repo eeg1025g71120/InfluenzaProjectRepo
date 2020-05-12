@@ -9,6 +9,7 @@ Materials Needed:
  * A high preformance cluster (Ron was used in this study)
  * An Atmosphere/Jetstream account is recommended, however it was not utilized in this study due to connectivity and speed issues.
  * Access to ENA database (https://www.ebi.ac.uk/ena/browser/home)
+ 
 Programs Utilized:
  * BLAST
  * MAFFT
