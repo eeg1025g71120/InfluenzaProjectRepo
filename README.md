@@ -1,7 +1,10 @@
 # InfluenzaProjectRepo
   This is the repository being used for my project on human succeptibility to bat influenza.
- 	mkdir Influenza_Analysis
+ 	
+	mkdir Influenza_Analysis
  	cd  Influenza_Analysis
+	
+	
 # Blast Analysis of H17N10's HA protein
     #Download H1N1
             curl -LO https://www.ebi.ac.uk/ena/browser/api/fasta/ABP49327.1?download=true
