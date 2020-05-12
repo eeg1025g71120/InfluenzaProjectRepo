@@ -3,8 +3,6 @@ This is the workbook being used for my project on human succeptibility to bat in
 # Background
   It has recenty been discovered that bats are hosts for two unique strands of Influenza A virus: H18N11 and H17N10. Due to these viruses being newly discovered little is known about the viruses' zoonotic potential. This study is designed to access H17N10 and H18N11's zoonotic potential through analysis of the hemagglutinin (HA) and neuraminidase (NA) proteins. HA and NA are essential proteins involved in the influenza virus' replication. If the virus lacked these proteins it wouldn't be able to replicate, and thus lose its virulence factor.  This study analyzes the potential zoonosis of the HA and NA proteins in H17N10 and H178N11 through the use of BLAST and phylogenomic analysis.
 
-![Bat](http://digital.library.illinoisstate.edu/cdm/ref/collection/p15990coll11/id/9)
-
 # The Setup: The Materials and Programs Needed for these Analyses
 Materials Needed:
  * PC for coding (A Lenova Yoga 730 was used in this study)
@@ -1296,3 +1294,11 @@ This should be the viewed result of the "cat" command:
 	*A nicer, more detailed version is available to view at: 
 		![Influenza phylogenic tree NA](https://github.com/eeg1025g71120/InfluenzaProjectRepo/blob/master/Influenza_NA_phylogenomics)
 			
+The two analyses show that H17N10 and H18N11 HA and NA proteins are different compared to the HA and NA proteins of human-infecting influenza virus. However, it should be noted that the phylogenomic analysis found that H17N10 and H18N11 share a common ancestor with avian H3 and N2 proteins. The H3 and N2 protein subtypes have been associated with the zoonotic transfer of disease from avian speices into humans(Guan et al 2019). This association indicates that there is potential for the H17N10 and H18N11 to undergo antigenic shift, and thus has the potential to become zoonotic
+
+
+#Work Cited:
+Guan, L., Shi, J., Kong, X., Ma, S., Zhang, Y., Yin, X., He, X., Liu, L., Suzuki, Y., Li, C., Deng, G., & Chen, H. (2019). H3N2 avian influenza viruses detected in live poultry markets in China bind to human-type receptors and transmit in guinea pigs and ferrets. Emerging microbes & infections, 8(1), 1280–1290. https://doi.org/10.1080/22221751.2019.1660590
+Influenza Type A Viruses. (2017, April 19). Retrieved from https://www.cdc.gov/flu/avianflu/influenza-a-virus-subtypes.htm
+Mostafa, A., Abdelwhab, E. M., Mettenleiter, T. C., & Pleschka, S. (2018). Zoonotic Potential of Influenza A Viruses: A Comprehensive Overview. Viruses, 10(9), 497. https://doi.org/10.3390/v10090497
+Olson, S. H., Parmley, J., Soos, C., Gilbert, M., Latorre-Margalef, N., Hall, J. S., Hansbro, P. M., Leighton, F., Munster, V., & Joly, D. (2014). Sampling strategies and biodiversity of influenza A subtypes in wild birds. PloS one, 9(3), e90826. https://doi.org/10.1371/journal.pone.0090826
