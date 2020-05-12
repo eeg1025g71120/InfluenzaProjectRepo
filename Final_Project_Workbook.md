@@ -1297,8 +1297,12 @@ This should be the viewed result of the "cat" command:
 The two analyses show that H17N10 and H18N11 HA and NA proteins are different compared to the HA and NA proteins of human-infecting influenza virus. However, it should be noted that the phylogenomic analysis found that H17N10 and H18N11 share a common ancestor with avian H3 and N2 proteins. The H3 and N2 protein subtypes have been associated with the zoonotic transfer of disease from avian speices into humans(Guan et al 2019). This association indicates that there is potential for the H17N10 and H18N11 to undergo antigenic shift, and thus has the potential to become zoonotic
 
 
-#Work Cited:
+# Work Cited:
+
 Guan, L., Shi, J., Kong, X., Ma, S., Zhang, Y., Yin, X., He, X., Liu, L., Suzuki, Y., Li, C., Deng, G., & Chen, H. (2019). H3N2 avian influenza viruses detected in live poultry markets in China bind to human-type receptors and transmit in guinea pigs and ferrets. Emerging microbes & infections, 8(1), 1280–1290. https://doi.org/10.1080/22221751.2019.1660590
+
 Influenza Type A Viruses. (2017, April 19). Retrieved from https://www.cdc.gov/flu/avianflu/influenza-a-virus-subtypes.htm
+
 Mostafa, A., Abdelwhab, E. M., Mettenleiter, T. C., & Pleschka, S. (2018). Zoonotic Potential of Influenza A Viruses: A Comprehensive Overview. Viruses, 10(9), 497. https://doi.org/10.3390/v10090497
+
 Olson, S. H., Parmley, J., Soos, C., Gilbert, M., Latorre-Margalef, N., Hall, J. S., Hansbro, P. M., Leighton, F., Munster, V., & Joly, D. (2014). Sampling strategies and biodiversity of influenza A subtypes in wild birds. PloS one, 9(3), e90826. https://doi.org/10.1371/journal.pone.0090826
