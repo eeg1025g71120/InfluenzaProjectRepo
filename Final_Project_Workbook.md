@@ -1,7 +1,7 @@
 # Analysis of Influenza H18N11 and H17N10 Hemagglutinin and Neuraminidase Proteins Through BLAST Analysis and Phylogenomic to Access Zoonotic Potential
 This is the workbook being used for my project on human succeptibility to bat influenza.
 # Background
-  It has recenty been discovered that bats are hosts for two unique strands of Influenza A virus: H18N11 and H17N10. Due to these viruses being newly discovered little is known about the viruses' zoonotic potential. This study is designed to access H17N10 and H18N11's zoonotic potential through analysis of the hemagglutinin (HA) and neuraminidase (NA) proteins. HA and NA are essential proteins involved in the influenza virus' replication. If the virus lacked these proteins it wouldn't be able to replicate, and thus lose its virulence factor.  This study analyzes the potential zoonosis of the HA and NA proteins in H17N10 and H178N11 through the use of BLAST and phylogenomic analysis.
+  It has recenty been discovered that bats are hosts for two unique strands of Influenza A virus: H18N11 and H17N10(Wu et al 2014). Due to these viruses being newly discovered little is known about the viruses' zoonotic potential. This study is designed to access H17N10 and H18N11's zoonotic potential through analysis of the hemagglutinin (HA) and neuraminidase (NA) proteins. HA and NA are essential proteins involved in the influenza virus' replication (Gamblin et al 2010). If the virus lacked these proteins it wouldn't be able to replicate, and thus lose its virulence factor.  This study analyzes the potential zoonosis of the HA and NA proteins in H17N10 and H178N11 through the use of BLAST and phylogenomic analysis.
 
 # The Setup: The Materials and Programs Needed for these Analyses
 Materials Needed:
@@ -1313,6 +1313,7 @@ The two analyses show that H17N10 and H18N11 HA and NA proteins are different co
 
 
 # Work Cited:
+Gamblin, S. J., & Skehel, J. J. (2010). Influenza hemagglutinin and neuraminidase membrane glycoproteins. The Journal of biological chemistry, 285(37), 28403–28409. https://doi.org/10.1074/jbc.R110.129809 
 
 Guan, L., Shi, J., Kong, X., Ma, S., Zhang, Y., Yin, X., He, X., Liu, L., Suzuki, Y., Li, C., Deng, G., & Chen, H. (2019). H3N2 avian influenza viruses detected in live poultry markets in China bind to human-type receptors and transmit in guinea pigs and ferrets. Emerging microbes & infections, 8(1), 1280–1290. https://doi.org/10.1080/22221751.2019.1660590
 
@@ -1321,3 +1322,5 @@ Influenza Type A Viruses. (2017, April 19). Retrieved from https://www.cdc.gov/f
 Mostafa, A., Abdelwhab, E. M., Mettenleiter, T. C., & Pleschka, S. (2018). Zoonotic Potential of Influenza A Viruses: A Comprehensive Overview. Viruses, 10(9), 497. https://doi.org/10.3390/v10090497
 
 Olson, S. H., Parmley, J., Soos, C., Gilbert, M., Latorre-Margalef, N., Hall, J. S., Hansbro, P. M., Leighton, F., Munster, V., & Joly, D. (2014). Sampling strategies and biodiversity of influenza A subtypes in wild birds. PloS one, 9(3), e90826. https://doi.org/10.1371/journal.pone.0090826
+
+Wu, Y., Wu, Y., Tefsen, B., Shi, Y., & Gao, G. F. (2014). Bat-derived influenza-like viruses H17N10 and H18N11. Trends in microbiology, 22(4), 183–191. https://doi.org/10.1016/j.tim.2014.01.010
