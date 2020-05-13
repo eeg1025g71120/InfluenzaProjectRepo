@@ -19,10 +19,10 @@ Programs Utilized:
 # Setting up and Downloading Programs 
 The first step for our analysis was to log onto Ron and to create a new directory to house our downloaded data in:
 	
-	mkdir Influenza_Analysis 
+	mkdir Final_Project
 Then we can move into our newly made directory:
  	
-	cd  Influenza_Analysis
+	cd  Final_Project
 While Jetstream wasn't used in this analysis due to connectivity issues, a "Ubuntu 18_04 Devel and Docker" instance with a M1.xxlarge size is recommended.
 Now that our setup is complete we can move onto the analyses.
 # BLAST
