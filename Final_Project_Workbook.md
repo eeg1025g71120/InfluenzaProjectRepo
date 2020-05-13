@@ -19,7 +19,7 @@ Programs Utilized:
 # Setting up and Downloading Programs 
 The first step for our analysis was to log onto Ron and to create a new directory to house our downloaded data in:
 	
-	mkdir Influenza_Analysis
+	mkdir Influenza_Analysis 
 Then we can move into our newly made directory:
  	
 	cd  Influenza_Analysis
