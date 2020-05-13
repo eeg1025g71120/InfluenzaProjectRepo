@@ -1313,11 +1313,19 @@ The two analyses show that H17N10 and H18N11 HA and NA proteins are different co
 
 
 # Work Cited:
+BLAST database. Bethesda (MD): National Library of Medicine (US), National Center for Biotechnology Information; 2017 Available from:https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download
+
+“European Nucleotide Archive.” European Nucleotide Archive, European Nucleotide Archive, www.ebi.ac.uk/ena/browser/home.
+
 Gamblin, S. J., & Skehel, J. J. (2010). Influenza hemagglutinin and neuraminidase membrane glycoproteins. The Journal of biological chemistry, 285(37), 28403–28409. https://doi.org/10.1074/jbc.R110.129809 
 
 Guan, L., Shi, J., Kong, X., Ma, S., Zhang, Y., Yin, X., He, X., Liu, L., Suzuki, Y., Li, C., Deng, G., & Chen, H. (2019). H3N2 avian influenza viruses detected in live poultry markets in China bind to human-type receptors and transmit in guinea pigs and ferrets. Emerging microbes & infections, 8(1), 1280–1290. https://doi.org/10.1080/22221751.2019.1660590
 
 Influenza Type A Viruses. (2017, April 19). Retrieved from https://www.cdc.gov/flu/avianflu/influenza-a-virus-subtypes.htm
+
+“IQ-TREE Download Version 1.6.12.” Iqtree, 15 Aug. 2019, www.iqtree.org/#download.
+
+MAFFT (n.d.). Embl-Ebi. Retrieved from https://www.ebi.ac.uk/Tools/msa/mafft/
 
 Mostafa, A., Abdelwhab, E. M., Mettenleiter, T. C., & Pleschka, S. (2018). Zoonotic Potential of Influenza A Viruses: A Comprehensive Overview. Viruses, 10(9), 497. https://doi.org/10.3390/v10090497
 
