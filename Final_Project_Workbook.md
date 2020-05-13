@@ -65,7 +65,7 @@ The human-infecting influenza strains are then combined into a fasta file to be 
    
           less blast.out
 Due to Ron's limited space all files should be removed using the rm command.
-The "ls" command can then be used to ensure our directory is clear.
+The `ls` command can then be used to ensure our directory is clear.
 # Blast Analysis of H18N11's HA protein
 Similar to the above coding, the BLAST analysis of H18N11's HA protein begins with downloading and formating the imported data from the ENA database:
 
@@ -90,9 +90,12 @@ Again, the human-infecting influenza strains are then combined into a fasta file
   A BLAST database is then made:
   
         makeblastdb -in Human_Influenza_Viruses.fasta -out influenza -dbtype prot
-  "- in" is signiling the file input. This should be the output of your previous cat command.
-  "-out" is signaling the output file. This is what you want your database is referencing
-  "prot" is signaling that the data being used in this acessment is protein coded data
+  
+  `- in` is signiling the file input. This should be the output of your previous cat command.
+ 
+ `-out` is signaling the output file. This is what you want your database is referencing.
+
+  `prot` is signaling that the data being used in this acessment is protein coded data.
   
   A BLAST analysis can then occur using the H18N11 as our query, or our file of interest:
        
@@ -102,7 +105,7 @@ Again, the human-infecting influenza strains are then combined into a fasta file
    
           less blast.out
 Again, due to Ron's limited space all files should be removed using the rm command.     
- The "ls" command can then be used to ensure our directory is clear.
+ The `ls` command can then be used to ensure our directory is clear.
  
 # Blast Analysis of H17N10's NA protein
 Similar to the above codings, the BLAST analysis of H17N10's NA protein begins with downloading and formating the imported data from the ENA database:
@@ -129,9 +132,11 @@ Once again, the human-infecting influenza strains are then combined into a fasta
  A BLAST database is then made:
   
         makeblastdb -in Human_Influenza_Viruses.fasta -out influenza -dbtype prot
- "- in" is signiling the file input. This should be the output of your previous cat command.
-  "-out" is signaling the output file. This is what you want your database is referencing
-  "prot" is signaling that the data being used in this acessment is protein coded data
+ `- in` is signiling the file input. This should be the output of your previous cat command.
+ 
+  `-out` is signaling the output file. This is what you want your database is referencing.
+  
+  `prot` is signaling that the data being used in this acessment is protein coded data.
   
   A BLAST analysis can then occur using the H17N10 as our query, or our file of interest:
 
@@ -140,7 +145,7 @@ Once again, the human-infecting influenza strains are then combined into a fasta
    
           less blast.out
 Again, due to Ron's limited space all files should be removed using the rm command.   
- The "ls" command can then be used to ensure our directory is clear.   
+ The `ls` command can then be used to ensure our directory is clear.   
     
     
 # Blast Analysis of H18N11's NA protein
@@ -167,9 +172,11 @@ Once again, the human-infecting influenza strains are then combined into a fasta
   A BLAST database is then made:
 
         makeblastdb -in Human_Influenza_Viruses.fasta -out influenza -dbtype prot
- "- in" is signiling the file input. This should be the output of your previous cat command.
-  "-out" is signaling the output file. This is what you want your database is referencing
-  "prot" is signaling that the data being used in this acessment is protein coded data	
+ `- in` is signiling the file input. This should be the output of your previous cat command.
+ 
+  `-out` is signaling the output file. This is what you want your database is referencing.
+  
+  `prot` is signaling that the data being used in this acessment is protein coded data.	
   
  A BLAST analysis can then occur using the H18N11 as our query, or our file of interest:
 	
@@ -179,7 +186,7 @@ Once again, the human-infecting influenza strains are then combined into a fasta
    
           less blast.out
 Again, due to Ron's limited space all files should be removed using the rm command.  
-The "ls" command can then be used to ensure our directory is clear.
+The `ls` command can then be used to ensure our directory is clear.
 
 *Disclaimer: If using Jetstream or coding platform with a large storage component then the file from each BLAST analysis do not have to be removed right away. Our study choose to remove the data ater each analysis to avoid any coding complications. If one of these larger storage component platforms are used it is recommended that the cat file for each indvidual BLAST analysis has ts own unique name to avoid complication.*
 # Phylogenomic Analysis
@@ -721,33 +728,38 @@ After combining the files, a MAFFT analysis is done to align the sequences.
 
 		mafft --auto Influenza_HA_Phylogenetics_Tree.fa > Output_Influenza_HA_phylogenic.fa
 
- "--auto" precedes the input file, which output file of our previous "cat" command
- "Output_Influenza_HA_phylogenic.fa" is the name of our output file in our study, but any output file name will work as long as the syntax is correct.
+ `--auto` precedes the input file, which output file of our previous `cat` command
+ 
+ `Output_Influenza_HA_phylogenic.fa` is the name of our output file in our study, but any output file name will work as long as the syntax is correct.
  
  
 The ouput from the MAFFT sequence alignment is then used to build a phylogenic tree based on our data:
 
 		iqtree -s Output_Influenza_HA_phylogenic.fa -m JC -bb 1000 -pre output
-"-s" precedes our input file which is the output file of our MAFFT alignment
-"JC" is the model that was used for this study
-"-bb" is the boostraping subset used for this study was 1000
-"-pre" precedes the name of our output file. I used "output" as the file name for simplicity sake, but the output file name could be anything.
+`-s` precedes our input file which is the output file of our MAFFT alignment.
+
+`JC` is the model that was used for this study.
+
+`-bb` is the boostraping subset used for this study was 1000.
+
+`-pre` precedes the name of our output file. I used "output" as the file name for simplicity sake, but the output file name could be anything.
 
 The iqtree should produce a file named: output.contree.
-This file was then "cat"ed onto the terminal"
+This file was then `cat` onto the terminal:
 
 		cat output.contree
-This should be the viewed result of the "cat" command:
+This should be the viewed result of the `cat` command:
 			
 			(H1N1_Duck1:0.037485,(((H1N2_Duck1:0.018950,H1N4_Duck1:0.009877)100:0.018579 (H1N3_Duck1:0.044272,H1N5_Duck1:0.020226)61:0.014080)100:0.059193,(((((H2N1_duck:0.025917,H2N5_mallard:0.011109)99:0.014810,((H2N4_mallard:0.017297,H2N6_mallard:0.011822)98:0.007558,H2N9_duck:0.030154)51:0.015007)100:0.067918,(((H2N2_duck:0.034788,H2N3_duck:0.019467)100:0.013951,H2N8_duck:0.033609)100:0.020480,H2N7_duck:0.048236)100:0.055911)100:0.126212,((((H5N1_duck:0.021438,(H5N5_duck:0.004871,H5N6_duck:0.043724)100:0.027708)100:0.048773,(H5N7_mallard:0.011607,H5N8_duck:0.035641)96:0.010873)83:0.013520,H5N3_duck:0.018210)100:0.088744,((H5N2_duck:0.004405,H5N4_mallard:0.014071)100:0.013677,H5N9_duck:0.021921)100:0.060745)100:0.129553)99:0.077207,((((((((H3N1_duck:0.062937,(H3N2_duck:0.045816,((H3N3_duck:0.006348,H3N6_duck:0.013856)100:0.008662,H3N5_duck:0.014017)99:0.012673)100:0.034303)100:0.034012,(((H3N4_duck_mallard:0.004135,H3N8_mallard:0.028226)99:0.005049,H3N7_mallard1:0.027320)99:0.017091,H3N9_duck:0.035972)100:0.058009)100:0.197910,((((H4N1_duck:0.043805,(H4N3_duck:0.058759,(H4N7_duck:0.014758,H4N8_duck:0.015192)100:0.018921)100:0.019741)100:0.028527,(H4N6_duck:0.021703,H4N9_mallard:0.017650)100:0.041274)100:0.055672,((H4N2_duck:0.049087,H4N5_mallard:0.051582)97:0.022793,H4N4_duck:0.037716)100:0.066405)100:0.093841,(((((H14N2_northern_shoveler:0.003535,H14N7_teal:0.028108)84:0.002341,H14N3_teal1:0.006484)81:0.000154,H14N4_teal1:0.011658)100:0.014949,(H14N6_duck:0.000002,H14N8_duck:0.000002)100:0.013499)100:0.044174,H14N5_mallard:0.061645)100:0.190541)100:0.084285)100:0.178559,(((((H7N1_duck:0.010640,(H7N6_duck:0.023578,(H7N7_duck:0.010082,H7N8_duck:0.003688)100:0.009002)98:0.016765)98:0.020511,(H7N2_duck:0.012151,H7N4_duck:0.011955)100:0.033086)100:0.107610,(H7N3_duck:0.054217,H7N5_duck:0.048384)100:0.111900)100:0.072002,(((H15N2_Australian_shelduck:0.000580,H15N6_shearwater:0.010730)100:0.006489,H15N8_duck:0.022112)100:0.053239,(H15N4_teal:0.012108,(H15N7_mallard:0.005143,H15N9_duck:0.017917)100:0.016883)100:0.044125)100:0.112851)100:0.124484,(((H10N1_duck:0.074411,H10N9_duck:0.031277)96:0.030517,(((((H10N2_duck:0.000594,H10N3_duck:0.000593)100:0.008498,H10N7_duck:0.005244)99:0.001153,H10N5_duck:0.004320)100:0.025656,H10N8_duck:0.008263)100:0.009734,H10N4_mallard:0.017786)100:0.038952)100:0.078477,H10N6_duck:0.090791)100:0.182031)100:0.144418)100:0.180854,((((H8N1_northern_shoveler:0.034284,((H8N2_duck:0.000002,H8N7_duck1:0.000588)100:0.023862,H8N3_teal:0.054044)71:0.015634)100:0.048945,(H8N4_duck:0.035441,(H8N5_duck1:0.018984,(H8N6_ruddy_shelduck1:0.016962,H8N8_teal1:0.018347)100:0.013607)100:0.038655)100:0.047581)100:0.192474,((H12N1_duck:0.040553,H12N3_ruddy_shelduck:0.036918)100:0.077937,((((H12N2_duck:0.015421,H12N6_duck:0.016580)100:0.012834,H12N5_duck:0.010553)100:0.015592,H12N7_ruddy_turnstone:0.032968)100:0.024622,((H12N4_mallard:0.007745,H12N8_duck:0.002936)100:0.011397,H12N9_mallard:0.008326)99:0.018178)100:0.076679)100:0.164890)99:0.080732,((((H9N1_duck1:0.026489,H9N6_duck1:0.020397)93:0.007848,((H9N3_mallard1:0.016953,H9N4_duck1:0.040012)98:0.010195,(H9N7_ruddy_turnstone1:0.000002,H9N9_ruddy_turnstone1:0.002379)100:0.041929)99:0.022122)92:0.017434,H9N5_ruddy_turnstone1:0.059888)97:0.026694,(H9N2_duck1:0.085229,H9N8_duck1:0.068415)99:0.029750)100:0.214060)100:0.112215)66:0.034903,((((H11N1_duck:0.041273,H11N6_duck:0.043805)99:0.016937,((H11N2_duck:0.026992,(H11N7_mallard:0.004692,H11N8_mallard:0.007755)100:0.015854)100:0.021043,(H11N3_duck:0.011217,H11N9_duck:0.021875)100:0.057382)91:0.019824)100:0.075334,(H11N4_ruddy_turnstone:0.050684,H11N5_ruddy_turnstone:0.044200)100:0.069906)100:0.165333,(((((H13N1_laughing_gull:0.003019,H13N4_red_knot:0.011145)94:0.009497,H13N3_gull1:0.012099)100:0.068211,(H13N8_gull1:0.073126,H13N9_gull1:0.074574)100:0.054576)100:0.059404,(H13N2_duck1:0.035346,H13N6_duck1:0.026080)100:0.111890)100:0.066996,(H16N3_duck:0.011153,H16N9_gull:0.016094)100:0.157349)100:0.173587)100:0.100840)87:0.058775,(H18N11_bat_1:0.235617,H17N10_bat_1:0.277448)100:0.192995)94:0.067707,(((((H6N1_duck:0.016929,H6N9_duck:0.016120)100:0.020274,(H6N2_duck:0.018050,H6N5_duck:0.017267)100:0.018429)98:0.013608,(H6N4_duck:0.016847,H6N8_duck:0.014486)100:0.020877)99:0.035875,H6N6_duck:0.090490)100:0.082523,(H6N3_duck:0.029735,(H6N7_mallard:0.000002,H7N9_duck:0.000002)100:0.029759)100:0.108224)100:0.185574)81:0.048781)100:0.198332)99:0.034306,((H1N6_Mallard1:0.010596,H1N7_ruddy_turnstone:0.025355)97:0.008724,(H1N8_mallard:0.009585,H1N9_mallard:0.011207)98:0.007144)100:0.039323);
-  The result of the "cat" command was then copied and pasted into  FigTree v1.4.4.
+			
+  The result of the `cat` command was then copied and pasted into  FigTree v1.4.4.
 
 ![Influenza HA phylogenic tree](https://github.com/eeg1025g71120/InfluenzaProjectRepo/blob/master/Screenshot_2020-05-12%20InfluenzaHA_avian_phylo_compares.png)
 	*A nicer version is available to view at: 
 		![Influenza phylogenic tree HA](https://github.com/eeg1025g71120/InfluenzaProjectRepo/blob/master/HA%20Protein%20Influenza%20Phylogenomic%20Tree.pdf)
  
   # Phylogenomic analysis of the NA protein in Influenza A subtypes:
-  The phylogenomic analysis of the NA protein, again begins with downloading and formating the imported data from the ENA database. Due to the quantity of data being downloaded it is essential that we clear the directory from the previous tree This can be done using the "ls" command. After the directory is clear, the data can be downloaded and formated properly. 
+  The phylogenomic analysis of the NA protein, again begins with downloading and formating the imported data from the ENA database. Due to the quantity of data being downloaded it is essential that we clear the directory from the previous tree This can be done using the `ls` command. After the directory is clear, the data can be downloaded and formated properly. 
   The following downloaded data is broken down by the HA variables:
   
   	# Download Reference Strains
@@ -1267,28 +1279,31 @@ Again, the downloaded and formated data is combined into a Fasta files:
 After combining the files, another MAFFT analysis is done to align the sequences:
 
 	mafft --auto Influenza_NA_Phylogenetics_Tree.fa > Output_Influenza_NA_Phylogenetics_Tree.fa
- "--auto" precedes the input file, which output file of our previous "cat" command
- "Output_Influenza_HA_phylogenic.fa" is the name of our output file in our study, but any output file name will work as long as the syntax is correct.
+ `--auto` precedes the input file, which output file of our previous "cat" command.
+
+`Output_Influenza_HA_phylogenic.fa` is the name of our output file in our study, but any output file name will work as long as the syntax is correct.
 	
 The ouput from the MAFFT sequence alignment is then used to build a phylogenic tree based on our data:	
 	
 	iqtree -s Output_Influenza_NA_Phylogenetics_Tree.fa -m JC -bb 1000 -pre output
-"-s" precedes our input file which is the output file of our MAFFT alignment
-"JC" is the model that was used for this study
-"-bb" is the boostraping subset used for this study was 1000
-"-pre" precedes the name of our output file. I used "output" as the file name for simplicity sake, but the output file name could be anything.
+`-s` precedes our input file which is the output file of our MAFFT alignment.
+
+`JC` is the model that was used for this study.
+
+`-bb` is the boostraping subset used for this study was 1000.
+`-pre` precedes the name of our output file. I used "output" as the file name for simplicity sake, but the output file name could be anything.
 
 The iqtree should then produce a file named: output.contree (same as last time).
-This file was then "cat"ed onto the terminal"
+This file was then `cat` onto the terminal:
 
 		cat output.contree
-This should be the viewed result of the "cat" command:
+This should be the viewed result of the `cat` command:
 
 
 	(H1N1_Duck1:0.019219,(((((((((((H1N2_Duck1:0.057968,H9N2_duck1:0.078540)90:0.030822,(((H2N2_duck:0.021279,(H4N2_duck:0.023570,H6N2_duck:0.058247)88:0.020280)83:0.007679,H14N2_northern_shoveler:0.036362)78:0.009658,((((H3N2_duck:0.007801,((H8N2_duck:0.002110,H12N2_duck:0.005008)100:0.005728,H13N2_duck1:0.016557)100:0.000720)100:0.015640,H10N2_duck:0.014602)100:0.015887,H7N2_duck:0.026506)100:0.015147,(H5N2_duck:0.017092,H11N2_duck:0.025908)100:0.021769)100:0.020640)95:0.027314)100:0.312195,(((((H1N6_Mallard1:0.015236,H12N6_duck:0.020447)100:0.018054,(H2N6_mallard:0.025784,H10N6_duck:0.008862)100:0.021312)100:0.094131,(((((((H3N6_duck:0.002127,H4N6_duck:0.004264)100:0.003462,H14N6_duck:0.007934)95:0.000771,(H7N6_duck:0.003481,H11N6_duck:0.019469)99:0.002949)100:0.036013,H8N6_ruddy_shelduck1:0.034684)93:0.013801,H5N6_duck:0.105655)92:0.016189,H9N6_duck1:0.032256)99:0.043545,H13N6_duck1:0.069666)100:0.071585)100:0.159908,(((((H1N9_mallard:0.036030,(H13N9_gull1:0.001650,H16N9_gull:0.005345)100:0.046378)69:0.004634,(H5N9_duck:0.025348,H12N9_mallard:0.018278)96:0.007605)100:0.022493,(H6N9_duck:0.011805,H9N9_ruddy_turnstone1:0.028542)75:0.008088)100:0.027368,(H2N9_duck:0.011599,(H4N9_mallard:0.008760,(H7N9_duck:0.022528,(H11N9_duck:0.038676,H15N9_duck:0.022681)100:0.004869)100:0.007940)100:0.003404)100:0.034195)100:0.071257,H10N9_duck:0.093902)100:0.166420)100:0.094297,((((H1N7_ruddy_turnstone:0.008671,H14N7_teal:0.018609)100:0.009063,(((H6N7_mallard:0.002843,H9N7_ruddy_turnstone1:0.015756)54:0.000712,H12N7_ruddy_turnstone:0.005675)47:0.000594,H8N7_duck1:0.036419)72:0.020508)71:0.010458,H3N7_mallard1:0.019871)100:0.137163,(H2N7_duck:0.026894,(((H4N7_duck:0.009929,(H7N7_duck:0.015757,H15N7_mallard:0.034749)99:0.002867)98:0.002156,H5N7_mallard:0.017099)99:0.003054,(H10N7_duck:0.014699,H11N7_mallard:0.027837)100:0.010687)100:0.022937)100:0.103085)100:0.191505)100:0.101169)99:0.081854,(((H1N3_Duck1:0.051502,(H3N3_duck:0.048185,((((H4N3_duck:0.023001,H12N3_ruddy_shelduck:0.021977)98:0.003678,H8N3_perdix_perdix:0.015060)92:0.002647,((H5N3_duck:0.011142,H9N3_mallard1:0.008195)100:0.002065,H10N3_duck:0.014759)100:0.012388)88:0.001563,H7N3_duck:0.023733)94:0.009826)100:0.041446)99:0.035398,(((H2N3_duck:0.007353,H6N3_duck:0.012712)78:0.013527,H14N3_teal1:0.035787)75:0.014112,H11N3_duck:0.024529)100:0.036237)100:0.101595,(H13N3_gull1:0.017792,H16N3_duck:0.017168)100:0.169100)100:0.237524)100:0.135411,(H17N10_bat_1:0.486560,H18N11_bat_1:0.428456)100:0.265770)87:0.033546,((((((H1N5_Duck1:0.009400,H3N5_duck:0.016308)100:0.015277,H5N5_duck:0.024859)92:0.014117,(H6N5_duck:0.030470,(H8N5_duck1:0.005646,H10N5_duck:0.000721)100:0.012789)98:0.008420)90:0.023225,H14N5_mallard:0.029820)100:0.104033,(((H2N5_mallard:0.023261,((H7N5_duck:0.020817,H12N5_duck:0.009912)96:0.010150,H9N5_ruddy_turnstone1:0.020889)96:0.020515)89:0.010595,H11N5_teal:0.031420)89:0.011104,H4N5_mallard:0.027769)100:0.085317)100:0.170421,((((((H1N8_mallard:0.035529,(H3N8_mallard:0.010627,H12N8_duck:0.013161)100:0.013535)87:0.004060,(H4N8_duck:0.017589,H9N8_duck1:0.025086)100:0.014865)84:0.007079,H14N8_duck:0.039688)91:0.013620,H2N8_duck:0.043427)91:0.023521,H15N8_duck:0.045200)100:0.083700,(H5N8_duck:0.063881,(((H6N8_duck:0.012706,((H8N8_teal1:0.013386,H11N8_mallard:0.008080)90:0.000734,H10N8_duck:0.027127)90:0.003923)100:0.032906,H7N8_duck:0.050912)98:0.018883,H13N8_gull1:0.080364)53:0.020233)100:0.102109)100:0.130067)100:0.180178)100:0.090388,((((H1N4_Duck1:0.013555,H7N4_duck:0.017614)100:0.013270,(H8N4_duck:0.010402,H9N4_duck1:0.007795)99:0.004210)100:0.018829,((H6N4_duck:0.015715,H15N4_teal:0.002166)99:0.027084,H10N4_mallard:0.014462)82:0.015979)100:0.060701,((H2N4_mallard:0.018108,(H3N4_duck_mallard:0.010426,((H5N4_mallard:0.018618,H14N4_teal1:0.016445)91:0.003852,H12N4_mallard:0.005571)91:0.002842)100:0.031116)100:0.019255,H4N4_duck:0.019014)100:0.070600)100:0.180005)100:0.219678,H3N1_duck:0.037364)86:0.028782,((((H5N1_duck:0.041495,H6N1_duck:0.031157)99:0.010191,(H7N1_duck:0.029772,H12N1_duck:0.019143)100:0.033181)100:0.042167,H10N1_duck:0.021305)87:0.021066,H11N1_duck:0.022421)88:0.023535)100:0.041679,H4N1_duck:0.021062)96:0.007955,((H8N1_northern_shoveler:0.044138,H11N4_ruddy_turnstone:0.021693)100:0.025476,H9N1_duck1:0.010526)99:0.007362)99:0.004719,H2N1_duck:0.017001);
 
 
- The result of the "cat" command was then copied and pasted into  FigTree v1.4.4.
+ The result of the `cat` command was then copied and pasted into  FigTree v1.4.4.
 
 ![Influenza NA phylogenic tree](https://github.com/eeg1025g71120/InfluenzaProjectRepo/blob/master/Screenshot_2020-05-12%20InfluenzaHA_avian_phylo_compares.png)
 	*A nicer, more detailed version is available to view at: 
